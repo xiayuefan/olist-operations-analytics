@@ -1,0 +1,9 @@
+﻿rule,scope,eligible_orders,outside_scope_orders,flagged_orders
+flag_delivered_missing_date,状态为已交付,96478,2963,8
+flag_delivered_missing_approval,状态为已交付,96478,2963,14
+flag_delivered_missing_carrier,状态为已交付,96478,2963,2
+flag_carrier_before_purchase,下单与交物流时间均有值,97658,1783,166
+flag_delivery_before_carrier,交物流与送达时间均有值,96475,2966,23
+flag_canceled_has_delivery_date,状态为取消,625,98816,6
+flag_approval_before_purchase,下单与审批时间均有值,99281,160,0
+flag_carrier_before_approval,审批与交物流时间均有值,97644,1797,1359

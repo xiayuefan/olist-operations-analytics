@@ -1,0 +1,4 @@
+﻿字段,基准金额（分）,回读金额（分）,差额（分）
+order_items.price_cents,1359164370,1359164370,0
+order_items.freight_cents,225190954,225190954,0
+order_payments.payment_value_cents,1600887212,1600887212,0

@@ -1,0 +1,24 @@
+{
+  "rows": {
+    "order_insights": 99441,
+    "product_categories": 32951,
+    "monthly_purchase": 20,
+    "customer_rfm": 8,
+    "customer_cohort": 60,
+    "seller_snapshot": 2925
+  },
+  "delivered_orders": 96211,
+  "goods_cents": 1318102713,
+  "freight_cents": 219209288,
+  "valid_delay_orders": 96203,
+  "late_orders": 6531,
+  "rated_orders": 95568,
+  "low_score_orders": 12229,
+  "rfm_customers": 93104,
+  "clustered_sellers": 408,
+  "rule_candidates": 102,
+  "pca_variance_ratio": [
+    0.5225067827854973,
+    0.3295643230323145
+  ]
+}

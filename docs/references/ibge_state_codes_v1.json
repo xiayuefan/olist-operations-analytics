@@ -1,0 +1,11 @@
+{
+  "source_name": "IBGE Localidades API: Unidades da Federação",
+  "source_url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome",
+  "checked_date": "2026-11-05",
+  "scope": "州/联邦区缩写成员检查；不用于判断邮编和城市是否匹配",
+  "state_codes": [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
+    "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
+    "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+  ]
+}

@@ -1,0 +1,22 @@
+﻿file,rows,meaning
+order_status.csv,8,全历史订单状态分布，Q01
+monthly_business.csv,20,主窗口已交付经营、环比与成交额拆解，Q04–Q06
+category_structure.csv,74,主窗口结构和贡献，含缺失品类；品类订单数跨组不可加，Q07/Q09/Q34
+category_november_growth.csv,68,11 月相对 10 月商品金额增量，Q08/Q10
+state_structure.csv,27,主窗口结构和贡献，含缺失品类；品类订单数跨组不可加，Q07/Q09/Q34
+state_november_growth.csv,27,11 月相对 10 月商品金额增量，Q08/Q10
+monthly_purchase.csv,20,窗口内首次与后续已交付购买订单，Q12
+customer_cohort.csv,60,30/60/90 天复购客户和观察期资格，未成熟留空，Q14
+customer_rfm_segments.csv,8,基准日 2018-09-01，两阶段 F/R/M 分群，Q16
+customer_rfm.csv,93104,客户级 R/F/M 明细，Q15
+customer_frequency.csv,9,窗口内已交付订单的客户频次分布，Q11
+delay_bands_and_reviews.csv,5,有效延迟订单分档及评价覆盖，Q18/Q19
+stage_duration.csv,3,阶段有效样本和线性插值分位数，Q32
+latest_score_distribution.csv,6,全部已交付订单评分分布，包含无评分订单，Q33
+state_delay_review_wilson.csv,54,州内分组比较和 Wilson 95% 区间，Q20/Q21
+state_standardization.csv,2,两组共用合并样本州权重，比例未乘 100，Q22
+seller_snapshot.csv,2925,单卖家样本卖家指标、固定簇、规则和 PCA 坐标，Q26–Q31
+seller_candidates.csv,102,全量 102 位候选卖家，Q27
+seller_cluster_profiles.csv,3,簇级订单加权比率和规则重合，Q29/Q31
+seller_k_diagnostics.csv,4,K=2–5，种子间稳定性和轮廓系数，Q29
+delay_review_logistic.csv,3,同样本无惩罚逻辑回归，优势比和平均拟合概率差，Q23/Q24

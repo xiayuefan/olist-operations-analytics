@@ -1,0 +1,94 @@
+{
+  "manifest_version": "mysql_input_v1",
+  "manifest_sha256": "5bd9c3a25bdcb2af90ff342ac0b7a68f0a070e0b21385e3b40e15c27fc664eda",
+  "pandas": "2.0.3",
+  "pyarrow": "17.0.0",
+  "compression": "snappy",
+  "tables": {
+    "customers": {
+      "file": "customers.parquet",
+      "rows": 99441,
+      "primary_key": [
+        "customer_id"
+      ],
+      "source_csv_sha256": "70021af6862625ad9ca059ddae936cbb68eab97c4529904ec8e93ec89ee24803",
+      "parquet_sha256": "42ea4ecb166e842616e9cca74b1b562067a3ab687d856cd41845c31a281f7a80"
+    },
+    "sellers": {
+      "file": "sellers.parquet",
+      "rows": 3095,
+      "primary_key": [
+        "seller_id"
+      ],
+      "source_csv_sha256": "01df545130e6de97952b89f590a1c3eb903279d01d80f48de272d8dd08c5b6c8",
+      "parquet_sha256": "4354ad42983ddb7ef1474cf4076d9ea1f3d095ff6bfa3bfcee703a76d1e4018c"
+    },
+    "category_translation": {
+      "file": "category_translation.parquet",
+      "rows": 71,
+      "primary_key": [
+        "product_category_name"
+      ],
+      "source_csv_sha256": "7fcbd587a0e110d4a43162ee0ba64d205bad580214887c0c6e98f12e5917d3cc",
+      "parquet_sha256": "fd3b8518b0e5f9cad794ca28e37bba647f2f8eaaf4d6d6a7dd1f5f6fc59687a6"
+    },
+    "products": {
+      "file": "products.parquet",
+      "rows": 32951,
+      "primary_key": [
+        "product_id"
+      ],
+      "source_csv_sha256": "b25d8c4e55b558cfe982949ad12db68239c02ff5e8ae54dfc22898029bb099f2",
+      "parquet_sha256": "dd13b679ecfd16d07d4a2c48b5448b3589f255e4e1e2f030162008eb69d20bfd"
+    },
+    "geo_reference": {
+      "file": "geo_reference.parquet",
+      "rows": 19019,
+      "primary_key": [
+        "geolocation_zip_code_prefix",
+        "geolocation_state"
+      ],
+      "source_csv_sha256": "fab2663a77778e7ad5d8da7fc3f973e9d67035fab8f5e89227282747330d1107",
+      "parquet_sha256": "568417dcdea659328b3670bee21357611cca9ebb0e9576d80fe6ac213db20e67"
+    },
+    "orders": {
+      "file": "orders.parquet",
+      "rows": 99441,
+      "primary_key": [
+        "order_id"
+      ],
+      "source_csv_sha256": "61685cfc6f9505c4d2a793952b9e4d83fc7503bfbe272d4962a1b87f0abfb2c3",
+      "parquet_sha256": "27ef6597855deaaee9c18b82b6b7746eda22d27efa7b23f8fdb42f9735320313"
+    },
+    "order_items": {
+      "file": "order_items.parquet",
+      "rows": 112650,
+      "primary_key": [
+        "order_id",
+        "order_item_id"
+      ],
+      "source_csv_sha256": "672e86ef33f047a5fca7c236926cf90df342263193ece5c050d1105c5b3a594c",
+      "parquet_sha256": "564b5c819eee6df98d26f99bc0a4799b970ef3b20d3d762fee731b387fe3c21b"
+    },
+    "order_payments": {
+      "file": "order_payments.parquet",
+      "rows": 103886,
+      "primary_key": [
+        "order_id",
+        "payment_sequential"
+      ],
+      "source_csv_sha256": "6338cba13df31da5d46f951044e1355c9f7a3882e20fd074aece8db58c9c74b9",
+      "parquet_sha256": "106f505e5325774104eb2ea8867f97cdd208ac9dcf7fcc02a27e0a22045a3987"
+    },
+    "order_reviews": {
+      "file": "order_reviews.parquet",
+      "rows": 99224,
+      "primary_key": [
+        "order_id",
+        "review_id"
+      ],
+      "source_csv_sha256": "b948381fe32d24a29df5d29c660016b818ff22a08ebb6642fbfdf3be5f309f85",
+      "parquet_sha256": "a2f1a3cd450a82fe40fd105d6379675bfe0e6e1a02d196799076398c4e96a52c"
+    }
+  }
+}

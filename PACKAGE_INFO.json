@@ -1,0 +1,16 @@
+{
+  "packaged_on": "2026-11-19",
+  "included_source_files": 453,
+  "python_unit_tests": "27 passed before packaging",
+  "analysis_export": "22 CSV tables, numeric controls passed",
+  "powerbi": "PBIP static schema/binding checks passed; Desktop rendering not certified",
+  "source_csv_included": false,
+  "processed_results_included": true,
+  "excludes": [
+    "virtual environment",
+    "dependency/schema caches",
+    "machine environment files",
+    "temporary GUI helpers"
+  ],
+  "license": "MIT for original code; CC BY-NC-SA 4.0 for Olist data and derived outputs"
+}

@@ -1,0 +1,12 @@
+﻿order_id,payment_sequential,payment_type,payment_installments,payment_value,payment_value_cents,flag_zero_payment,flag_payment_type_not_defined,flag_zero_installments,flag_payment_needs_review
+8bcbe01d44d147f901cd3192671144db,4,voucher,1,0.00,0,True,False,False,True
+fa65dad1b0e818e3ccc5cb0e39231352,14,voucher,1,0.00,0,True,False,False,True
+6ccb433e00daae1283ccc956189c82ae,4,voucher,1,0.00,0,True,False,False,True
+744bade1fcf9ff3f31d860ace076d422,2,credit_card,0,58.69,5869,False,False,True,True
+4637ca194b6387e2d538dc89b124b0ee,1,not_defined,1,0.00,0,True,True,False,True
+00b1cb0320190ca0daa2c88b35206009,1,not_defined,1,0.00,0,True,True,False,True
+45ed6e85398a87c253db47c2d9f48216,3,voucher,1,0.00,0,True,False,False,True
+fa65dad1b0e818e3ccc5cb0e39231352,13,voucher,1,0.00,0,True,False,False,True
+1a57108394169c0b47d8f876acc9ba2d,2,credit_card,0,129.94,12994,False,False,True,True
+c8c528189310eaa44a745b8d9d26908b,1,not_defined,1,0.00,0,True,True,False,True
+b23878b3e8eb4d25a158f57d96331b18,4,voucher,1,0.00,0,True,False,False,True

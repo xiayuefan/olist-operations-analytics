@@ -1,0 +1,3 @@
+﻿检查项,原始缺失数,非空但解析失败数,转换后类型
+review_creation_date,0,0,datetime64[ns]
+review_answer_timestamp,0,0,datetime64[ns]

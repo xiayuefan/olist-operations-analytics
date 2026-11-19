@@ -1,0 +1,6 @@
+﻿检查项,记录数
+flag_zip_format_invalid,0
+flag_state_format_invalid,0
+flag_state_unknown,0
+flag_city_missing,0
+flag_customer_location_needs_review,0

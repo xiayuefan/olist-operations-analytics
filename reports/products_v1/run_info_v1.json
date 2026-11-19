@@ -1,0 +1,34 @@
+{
+  "version": "products_v1",
+  "python": "3.7.4",
+  "pandas": "1.1.5",
+  "source_dir": "${RAW_DATA_DIR}",
+  "source_sha256": {
+    "olist_products_dataset.csv": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+    "product_category_name_translation.csv": "a81f0d1f27b27e7293f761bc79e3ce8f348ee39c4b3ed3e49bde38f478586278",
+    "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279"
+  },
+  "output_dir": "${PROJECT_ROOT}\\data\\processed\\products_v1",
+  "product_grain": [
+    "product_id"
+  ],
+  "item_grain": [
+    "order_id",
+    "order_item_id"
+  ],
+  "translation_key": "product_category_name",
+  "join_validation": "两次左关联均为 many_to_one；保留所有商品和销售明细",
+  "scope": "原始全部商品和全部销售明细，无订单状态、时间筛选",
+  "deleted_product_rows": 0,
+  "deleted_item_rows": 0,
+  "money_unit": "BRL 整数分",
+  "numeric_policy": "七属性可空整数；非空解析失败、非有限、小数、负数停止核查",
+  "volume_policy": "三边非空且>0的记录尺寸乘积，单位cm3；未知不填零；不依赖重量",
+  "category_policy": "保留原始品类与英文缺失，区分来源缺失和未翻译；不自动补译",
+  "csv_read_policy": "ID字符串，七属性和体积Int64，flag_weight_zero为可空boolean；日期按格式解析",
+  "pending_checks": [
+    "原始品类缺失、两种未翻译品类、零重量及极端尺寸的原因",
+    "卖家表、地理表、正式分析窗口与有效订单口径",
+    "Parquet、MySQL、业务专题与Power BI"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "payments_v1",
+  "source_dir": "${RAW_DATA_DIR}",
+  "source_sha256": {
+    "olist_order_payments_dataset.csv": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+    "olist_orders_dataset.csv": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+    "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279"
+  },
+  "output_dir": "${PROJECT_ROOT}\\data\\processed\\payments_v1",
+  "python": "3.7.4",
+  "pandas": "1.1.5",
+  "input_payment_rows": 103886,
+  "output_payment_rows": 103886,
+  "input_order_rows": 99441,
+  "output_order_rows": 99441,
+  "input_item_rows": 112650,
+  "deleted_rows": 0,
+  "money_unit": "整数分；BRL 展示时除以 100",
+  "scope": "全量历史、全部状态；用于跨表金额一致性核查",
+  "difference_formula": "payment_amount_cents - goods_amount_cents - freight_amount_cents",
+  "exact_match_rule": "三项金额非空且差额为零；分组不作容差",
+  "sample_order_id": "ce6d150fb29ada17d2082f4847107665",
+  "csv_types": "重读时恢复整数分 Int64、可空 boolean 和日期字段",
+  "pending_checks": [
+    "零期数业务含义",
+    "跨表金额差异及缺少支付记录的业务原因",
+    "退款及其他业务凭据在当前原始表中未提供，不能据差额推断",
+    "正式分析区间与异常记录敏感性分析",
+    "其余表清洗、Parquet、MySQL 与 Power BI"
+  ]
+}

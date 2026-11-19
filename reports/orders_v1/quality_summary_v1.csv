@@ -1,0 +1,7 @@
+﻿rule,orders
+flag_delivered_missing_date,8
+flag_delivered_missing_approval,14
+flag_delivered_missing_carrier,2
+flag_carrier_before_purchase,166
+flag_delivery_before_carrier,23
+flag_canceled_has_delivery_date,6

@@ -1,0 +1,95 @@
+{
+  "name": "Olist Operations",
+  "dataColors": [
+    "#087E8B",
+    "#D65D54",
+    "#597CB2",
+    "#D8A647",
+    "#6A967C",
+    "#A5779E"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#152D44",
+  "tableAccent": "#087E8B",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI",
+      "fontSize": 13,
+      "color": "#152D44"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#65798A"
+    },
+    "callout": {
+      "fontFace": "Segoe UI",
+      "fontSize": 25,
+      "color": "#152D44"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "fontSize": 12,
+            "fontColor": "#152D44"
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "legend": [
+          {
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "value": [
+          {
+            "displayUnits": 1,
+            "fontSize": 24
+          }
+        ],
+        "label": [
+          {
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "waterfallChart": {
+      "*": {
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "#087E8B"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "#D65D54"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "#152D44"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

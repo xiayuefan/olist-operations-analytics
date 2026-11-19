@@ -1,0 +1,4 @@
+# 已验证的 Python 3.8 环境
+numpy==1.24.3
+pandas==2.0.3
+pyarrow==17.0.0

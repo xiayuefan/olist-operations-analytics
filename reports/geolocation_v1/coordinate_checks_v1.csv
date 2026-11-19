@@ -1,0 +1,11 @@
+﻿检查项,数量
+原表行数,1000163
+整行重复数,261831
+去重后行数,738332
+未进入候选集的记录数,25
+候选记录数,738307
+代表坐标组数,19019
+flag_missing_or_unparsed_coordinate,0
+flag_outside_world_range,0
+flag_outside_brazil_screen,25
+flag_invalid_zip_state,0

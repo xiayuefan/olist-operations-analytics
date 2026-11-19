@@ -1,0 +1,4 @@
+﻿检查项,原始缺失数,非空但只有空白字符数,规范后变化记录数
+customer_zip_code_prefix,0,0,0
+customer_city,0,0,0
+customer_state,0,0,0

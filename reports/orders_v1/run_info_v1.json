@@ -1,0 +1,10 @@
+{
+  "source": "${RAW_DATA_DIR}\\olist_orders_dataset.csv",
+  "python": "3.7.4",
+  "pandas": "1.1.5",
+  "rules_version": "orders_v1_six_review_rules",
+  "rows_kept": 99441,
+  "rows_deleted": 0,
+  "scope": "全量原始订单的课堂基线，尚未冻结最终分析区间",
+  "time_storage": "CSV 不保存时间类型，重新读取时需转换五个时间字段"
+}

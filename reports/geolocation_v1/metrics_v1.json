@@ -1,0 +1,35 @@
+{
+  "representative_key": [
+    "geolocation_zip_code_prefix",
+    "geolocation_state"
+  ],
+  "representative_method": "coordinate-wise median of eligible exact-row-deduplicated records",
+  "latitude_screen": [
+    -35,
+    6
+  ],
+  "longitude_screen": [
+    -75,
+    -28
+  ],
+  "screen_reference_url": "https://anuario.ibge.gov.br/images/aeb/2024/s1/2_pdf/s1t1101.pdf",
+  "cross_state_prefixes": 8,
+  "coordinate_checks": {
+    "原表行数": 1000163,
+    "整行重复数": 261831,
+    "去重后行数": 738332,
+    "未进入候选集的记录数": 25,
+    "候选记录数": 738307,
+    "代表坐标组数": 19019,
+    "flag_missing_or_unparsed_coordinate": 0,
+    "flag_outside_world_range": 0,
+    "flag_outside_brazil_screen": 25,
+    "flag_invalid_zip_state": 0
+  },
+  "source_sha256": {
+    "olist_geolocation_dataset.csv": "b514f6fc991b9566aeba02aa5d67e2c3630f034b60a0e05aa0d082a3b66d88d6",
+    "olist_customers_dataset.csv": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+    "olist_sellers_dataset.csv": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e",
+    "ibge_state_codes_v1.json": "c2dae976b43868b136de301db8f4729f9081480cc1126b15b9c29083358d06e2"
+  }
+}

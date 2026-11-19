@@ -1,0 +1,9 @@
+﻿检查项,数量
+客户记录数,99441
+customer_id不同值数,99441
+customer_unique_id不同值数,96096
+customer_id缺失数,0
+customer_unique_id缺失数,0
+customer_id重复行数_首条之后,0
+customer_unique_id重复行数_首条之后,3345
+整行重复数_首条之后,0

@@ -1,0 +1,6 @@
+﻿product_id,product_category_name,product_name_lenght,product_description_lenght,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm,product_category_name_english,category_match,flag_category_missing,flag_category_untranslated,flag_weight_missing,flag_weight_zero,can_use_weight,flag_content_metadata_missing,flag_dimensions_missing,flag_dimensions_nonpositive,can_calculate_volume,product_volume_cm3
+256a9c364b75753b97bee410c9491ad8,utilidades_domesticas,59,649,1,25250,68,66,66,housewares,both,False,False,False,False,True,False,False,False,True,296208
+0b48eade13cfad433122f23739a66898,moveis_decoracao,28,489,1,14000,70,60,70,furniture_decor,both,False,False,False,False,True,False,False,False,True,294000
+f227e2d44f10f7dad30fb4dfa839e7a2,moveis_sala,51,795,1,30000,70,60,70,furniture_living_room,both,False,False,False,False,True,False,False,False,True,294000
+3eb14e65e4208c6d94b7a32e41add538,moveis_sala,51,1392,3,30000,70,60,70,furniture_living_room,both,False,False,False,False,True,False,False,False,True,294000
+c1e0531cb1864fd3a0cae57dca55ca80,moveis_sala,50,837,1,30000,70,60,70,furniture_living_room,both,False,False,False,False,True,False,False,False,True,294000

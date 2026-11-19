@@ -1,0 +1,8 @@
+﻿relationship,child_null_rows,unmatched_non_null_rows,parent_key_unique
+orders.customer_id -> customers.customer_id,0,0,True
+items.order_id -> orders.order_id,0,0,True
+items.product_id -> products.product_id,0,0,True
+items.seller_id -> sellers.seller_id,0,0,True
+payments.order_id -> orders.order_id,0,0,True
+reviews.order_id -> orders.order_id,0,0,True
+products.product_category_name -> category_translation.product_category_name,610,13,True

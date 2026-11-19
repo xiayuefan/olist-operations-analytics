@@ -1,0 +1,350 @@
+{
+  "version": "mysql_input_v1",
+  "tables": {
+    "customers": {
+      "source": "customers_v1/customers_clean_v1.csv",
+      "expected_rows": 99441,
+      "primary_key": [
+        "customer_id"
+      ],
+      "grain": "一个订单关联的客户记录",
+      "columns": {
+        "customer_id": "CHAR(32)",
+        "customer_unique_id": "CHAR(32)",
+        "customer_zip_code_prefix": "CHAR(5)",
+        "customer_state": "CHAR(2)",
+        "customer_city": "VARCHAR(128)",
+        "flag_zip_format_invalid": "TINYINT",
+        "flag_state_format_invalid": "TINYINT",
+        "flag_state_unknown": "TINYINT",
+        "flag_city_missing": "TINYINT",
+        "flag_customer_location_needs_review": "TINYINT",
+        "can_group_by_city_state": "TINYINT"
+      },
+      "nullable": []
+    },
+    "sellers": {
+      "source": "sellers_v1/sellers_clean_v1.csv",
+      "expected_rows": 3095,
+      "primary_key": [
+        "seller_id"
+      ],
+      "grain": "一个卖家",
+      "columns": {
+        "seller_id": "CHAR(32)",
+        "seller_zip_code_prefix": "CHAR(5)",
+        "seller_state": "CHAR(2)",
+        "seller_city": "VARCHAR(128)",
+        "flag_zip_format_invalid": "TINYINT",
+        "flag_state_format_invalid": "TINYINT",
+        "flag_state_unknown": "TINYINT",
+        "flag_city_missing": "TINYINT"
+      },
+      "nullable": []
+    },
+    "category_translation": {
+      "source": "products_v1/category_translation_v1.csv",
+      "expected_rows": 71,
+      "primary_key": [
+        "product_category_name"
+      ],
+      "grain": "一个原始品类的英文映射",
+      "columns": {
+        "product_category_name": "VARCHAR(128)",
+        "product_category_name_english": "VARCHAR(128)"
+      },
+      "nullable": []
+    },
+    "products": {
+      "source": "products_v1/products_clean_v1.csv",
+      "expected_rows": 32951,
+      "primary_key": [
+        "product_id"
+      ],
+      "grain": "一个商品",
+      "columns": {
+        "product_id": "CHAR(32)",
+        "product_category_name": "VARCHAR(128)",
+        "product_name_lenght": "INT",
+        "product_description_lenght": "INT",
+        "product_photos_qty": "INT",
+        "product_weight_g": "INT",
+        "product_length_cm": "INT",
+        "product_height_cm": "INT",
+        "product_width_cm": "INT",
+        "product_volume_cm3": "INT",
+        "flag_category_missing": "TINYINT",
+        "flag_category_untranslated": "TINYINT",
+        "flag_weight_missing": "TINYINT",
+        "flag_weight_zero": "TINYINT",
+        "can_use_weight": "TINYINT",
+        "flag_content_metadata_missing": "TINYINT",
+        "flag_dimensions_missing": "TINYINT",
+        "flag_dimensions_nonpositive": "TINYINT",
+        "can_calculate_volume": "TINYINT"
+      },
+      "nullable": [
+        "product_category_name",
+        "product_name_lenght",
+        "product_description_lenght",
+        "product_photos_qty",
+        "product_weight_g",
+        "product_length_cm",
+        "product_height_cm",
+        "product_width_cm",
+        "product_volume_cm3",
+        "flag_weight_zero"
+      ]
+    },
+    "geo_reference": {
+      "source": "geolocation_v1/geo_reference_v1.csv",
+      "expected_rows": 19019,
+      "primary_key": [
+        "geolocation_zip_code_prefix",
+        "geolocation_state"
+      ],
+      "grain": "一个邮编前缀与州组合的代表坐标",
+      "columns": {
+        "geolocation_zip_code_prefix": "CHAR(5)",
+        "geolocation_state": "CHAR(2)",
+        "representative_latitude": "DOUBLE",
+        "representative_longitude": "DOUBLE",
+        "candidate_record_count": "INT",
+        "candidate_city_label_count": "INT"
+      },
+      "nullable": []
+    },
+    "orders": {
+      "source": "orders_v2/orders_clean_v2.csv",
+      "expected_rows": 99441,
+      "primary_key": [
+        "order_id"
+      ],
+      "grain": "一笔订单",
+      "columns": {
+        "order_id": "CHAR(32)",
+        "customer_id": "CHAR(32)",
+        "order_status": "VARCHAR(128)",
+        "order_purchase_timestamp": "DATETIME",
+        "order_approved_at": "DATETIME",
+        "order_delivered_carrier_date": "DATETIME",
+        "order_delivered_customer_date": "DATETIME",
+        "order_estimated_delivery_date": "DATETIME",
+        "flag_delivered_missing_date": "TINYINT",
+        "flag_delivered_missing_approval": "TINYINT",
+        "flag_delivered_missing_carrier": "TINYINT",
+        "flag_carrier_before_purchase": "TINYINT",
+        "flag_delivery_before_carrier": "TINYINT",
+        "flag_canceled_has_delivery_date": "TINYINT",
+        "flag_approval_before_purchase": "TINYINT",
+        "flag_carrier_before_approval": "TINYINT",
+        "flag_needs_review": "TINYINT",
+        "is_valid_transit": "TINYINT",
+        "is_valid_delay": "TINYINT",
+        "review_rule_count": "INT",
+        "delivery_delay_days": "INT",
+        "transit_days_raw": "DOUBLE",
+        "transit_days": "DOUBLE"
+      },
+      "nullable": [
+        "order_approved_at",
+        "order_delivered_carrier_date",
+        "order_delivered_customer_date",
+        "delivery_delay_days",
+        "transit_days_raw",
+        "transit_days"
+      ]
+    },
+    "order_items": {
+      "source": "items_v1/items_clean_v1.csv",
+      "expected_rows": 112650,
+      "primary_key": [
+        "order_id",
+        "order_item_id"
+      ],
+      "grain": "一笔订单中的一条商品明细",
+      "columns": {
+        "order_id": "CHAR(32)",
+        "product_id": "CHAR(32)",
+        "seller_id": "CHAR(32)",
+        "order_item_id": "INT",
+        "shipping_limit_date": "DATETIME",
+        "price_cents": "BIGINT",
+        "freight_cents": "BIGINT",
+        "flag_missing_shipping_limit_date": "TINYINT",
+        "flag_zero_price": "TINYINT",
+        "is_zero_freight": "TINYINT"
+      },
+      "nullable": [
+        "shipping_limit_date"
+      ],
+      "expected_totals": {
+        "price_cents": 1359164370,
+        "freight_cents": 225190954
+      }
+    },
+    "order_payments": {
+      "source": "payments_v1/payments_clean_v1.csv",
+      "expected_rows": 103886,
+      "primary_key": [
+        "order_id",
+        "payment_sequential"
+      ],
+      "grain": "一笔订单的一条支付记录",
+      "columns": {
+        "order_id": "CHAR(32)",
+        "payment_sequential": "INT",
+        "payment_installments": "INT",
+        "payment_type": "VARCHAR(128)",
+        "payment_value_cents": "BIGINT",
+        "flag_zero_payment": "TINYINT",
+        "flag_payment_type_not_defined": "TINYINT",
+        "flag_zero_installments": "TINYINT",
+        "flag_payment_needs_review": "TINYINT"
+      },
+      "nullable": [],
+      "expected_totals": {
+        "payment_value_cents": 1600887212
+      }
+    },
+    "order_reviews": {
+      "source": "reviews_v1/reviews_clean_v1.csv",
+      "expected_rows": 99224,
+      "primary_key": [
+        "order_id",
+        "review_id"
+      ],
+      "grain": "一笔订单的一条评价记录",
+      "columns": {
+        "order_id": "CHAR(32)",
+        "review_id": "CHAR(32)",
+        "review_score": "INT",
+        "review_comment_title": "TEXT",
+        "review_comment_message": "TEXT",
+        "review_creation_date": "DATETIME",
+        "review_answer_timestamp": "DATETIME",
+        "is_low_score": "TINYINT",
+        "has_comment_title": "TINYINT",
+        "has_comment_message": "TINYINT",
+        "flag_missing_creation_date": "TINYINT",
+        "flag_missing_answer_timestamp": "TINYINT",
+        "can_compare_review_time": "TINYINT",
+        "flag_answer_before_creation": "TINYINT",
+        "flag_review_time_needs_review": "TINYINT",
+        "review_answer_lag_days": "DOUBLE"
+      },
+      "nullable": [
+        "review_comment_title",
+        "review_comment_message",
+        "review_creation_date",
+        "review_answer_timestamp",
+        "review_answer_lag_days"
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "child": "orders",
+      "columns": [
+        "customer_id"
+      ],
+      "parent": "customers",
+      "parent_columns": [
+        "customer_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "order_items",
+      "columns": [
+        "order_id"
+      ],
+      "parent": "orders",
+      "parent_columns": [
+        "order_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "order_items",
+      "columns": [
+        "product_id"
+      ],
+      "parent": "products",
+      "parent_columns": [
+        "product_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "order_items",
+      "columns": [
+        "seller_id"
+      ],
+      "parent": "sellers",
+      "parent_columns": [
+        "seller_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "order_payments",
+      "columns": [
+        "order_id"
+      ],
+      "parent": "orders",
+      "parent_columns": [
+        "order_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "order_reviews",
+      "columns": [
+        "order_id"
+      ],
+      "parent": "orders",
+      "parent_columns": [
+        "order_id"
+      ],
+      "required": true
+    },
+    {
+      "child": "products",
+      "columns": [
+        "product_category_name"
+      ],
+      "parent": "category_translation",
+      "parent_columns": [
+        "product_category_name"
+      ],
+      "required": false
+    },
+    {
+      "child": "customers",
+      "columns": [
+        "customer_zip_code_prefix",
+        "customer_state"
+      ],
+      "parent": "geo_reference",
+      "parent_columns": [
+        "geolocation_zip_code_prefix",
+        "geolocation_state"
+      ],
+      "required": false
+    },
+    {
+      "child": "sellers",
+      "columns": [
+        "seller_zip_code_prefix",
+        "seller_state"
+      ],
+      "parent": "geo_reference",
+      "parent_columns": [
+        "geolocation_zip_code_prefix",
+        "geolocation_state"
+      ],
+      "required": false
+    }
+  ]
+}

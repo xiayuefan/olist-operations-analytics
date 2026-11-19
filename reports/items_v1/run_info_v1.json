@@ -1,0 +1,20 @@
+{
+  "version": "items_v1",
+  "source_dir": "${RAW_DATA_DIR}",
+  "python": "3.7.4",
+  "pandas": "1.1.5",
+  "input_item_rows": 112650,
+  "output_item_rows": 112650,
+  "deleted_item_rows": 0,
+  "money_unit": "整数分；BRL 展示时除以 100",
+  "scope": "全量历史订单基线；已交付 GMV 不含运费；支付额尚待支付表核对",
+  "shipping_limit_min": "2016-09-19 00:15:34",
+  "shipping_limit_max": "2020-04-09 22:35:08",
+  "pending_checks": [
+    "发货截止时间的业务合理性，包含 2020 年截止记录",
+    "正式分析区间与期末成熟度",
+    "异常记录敏感性分析",
+    "与支付表进行订单级金额核对"
+  ],
+  "csv_types": "CSV 不保存日期和可空整数类型；精确金额仍以整数分记录"
+}

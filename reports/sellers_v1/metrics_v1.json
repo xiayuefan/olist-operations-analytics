@@ -1,0 +1,22 @@
+{
+  "scope": "全部商品明细及其覆盖的订单",
+  "seller_rows": 3095,
+  "sellers_with_items": 3095,
+  "item_rows": 112650,
+  "distinct_orders_with_items": 98666,
+  "order_seller_pairs": 100010,
+  "multi_seller_orders": 1278,
+  "extra_order_seller_pairs": 1344,
+  "goods_amount_cents": 1359164370,
+  "freight_amount_cents": 225190954,
+  "location_flags": {
+    "flag_zip_format_invalid": 0,
+    "flag_state_format_invalid": 0,
+    "flag_state_unknown": 0,
+    "flag_city_missing": 0
+  },
+  "source_sha256": {
+    "olist_sellers_dataset.csv": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e",
+    "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279"
+  }
+}

@@ -1,0 +1,14 @@
+﻿product_id,product_category_name,product_name_lenght,product_description_lenght,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm,product_category_name_english,category_match,flag_category_missing,flag_category_untranslated,flag_weight_missing,flag_weight_zero,can_use_weight,flag_content_metadata_missing,flag_dimensions_missing,flag_dimensions_nonpositive,can_calculate_volume,product_volume_cm3
+0105b5323d24fc655f73052694dbbb3a,pc_gamer,59,621,4,2839,19,16,18,,left_only,False,True,False,False,True,False,False,False,True,5472
+6fd83eb3e0799b775e4f946bd66657c0,portateis_cozinha_e_preparadores_de_alimentos,52,280,1,1200,25,33,25,,left_only,False,True,False,False,True,False,False,False,True,20625
+5d923ead886c44b86845f69e50520c3e,portateis_cozinha_e_preparadores_de_alimentos,58,284,1,1200,25,33,25,,left_only,False,True,False,False,True,False,False,False,True,20625
+6727051471a0fc4a0e7737b57bff2549,pc_gamer,60,1532,3,650,16,22,20,,left_only,False,True,False,False,True,False,False,False,True,7040
+bed164d9d628cf0593003389c535c6e0,portateis_cozinha_e_preparadores_de_alimentos,54,382,2,850,30,21,22,,left_only,False,True,False,False,True,False,False,False,True,13860
+1220978a08a6b29a202bc015b18250e9,portateis_cozinha_e_preparadores_de_alimentos,46,280,1,1200,25,33,25,,left_only,False,True,False,False,True,False,False,False,True,20625
+ae62bb0f95af63d64eae5f93dddea8d3,portateis_cozinha_e_preparadores_de_alimentos,59,927,1,10600,40,20,38,,left_only,False,True,False,False,True,False,False,False,True,30400
+1954739d84629e7323a4295812a3e0ec,portateis_cozinha_e_preparadores_de_alimentos,58,792,4,750,30,30,30,,left_only,False,True,False,False,True,False,False,False,True,27000
+dbe520fb381ad695a7e1f2807d20c765,pc_gamer,60,840,6,800,18,22,22,,left_only,False,True,False,False,True,False,False,False,True,8712
+c7a3f1a7f9eef146cc499368b578b884,portateis_cozinha_e_preparadores_de_alimentos,52,1372,5,7350,40,30,23,,left_only,False,True,False,False,True,False,False,False,True,27600
+7afdd65f79f63819ff5bee328843fa37,portateis_cozinha_e_preparadores_de_alimentos,48,305,1,750,20,20,20,,left_only,False,True,False,False,True,False,False,False,True,8000
+a4756663d007b0cd1af865754d08d968,portateis_cozinha_e_preparadores_de_alimentos,60,1304,4,650,22,6,14,,left_only,False,True,False,False,True,False,False,False,True,1848
+cb9d764f38ee4d0c00af64d5c388f837,portateis_cozinha_e_preparadores_de_alimentos,57,306,1,625,28,27,24,,left_only,False,True,False,False,True,False,False,False,True,18144

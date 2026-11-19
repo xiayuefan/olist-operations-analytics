@@ -1,0 +1,8 @@
+﻿检查项,min,median,max
+product_name_lenght,5.0,51.0,76.0
+product_description_lenght,4.0,595.0,3992.0
+product_photos_qty,1.0,1.0,20.0
+product_weight_g,0.0,700.0,40425.0
+product_length_cm,7.0,25.0,105.0
+product_height_cm,2.0,13.0,105.0
+product_width_cm,6.0,20.0,118.0

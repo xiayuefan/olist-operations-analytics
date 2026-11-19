@@ -1,0 +1,9 @@
+﻿frequency_group,recency_group,monetary_group,m_cutoff_cents,customer_count,delivered_orders,goods_cents
+one_time,over_90d,at_or_above_p75,14990,18763,18763,635615961
+one_time,over_90d,below_p75,14990,54082,54082,369749262
+one_time,within_90d,at_or_above_p75,14990,4387,4387,150037833
+one_time,within_90d,below_p75,14990,13083,13083,90164153
+repeat,over_90d,at_or_above_p75,30448,539,1207,31275166
+repeat,over_90d,below_p75,30448,1647,3390,25063325
+repeat,within_90d,at_or_above_p75,30448,159,387,9241421
+repeat,within_90d,below_p75,30448,444,912,6955592

@@ -1,0 +1,2 @@
+-r requirements-parquet.txt
+PyMySQL==1.1.2

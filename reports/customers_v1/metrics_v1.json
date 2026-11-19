@@ -1,0 +1,31 @@
+{
+  "customer_rows": 99441,
+  "customer_id_unique": 99441,
+  "customer_unique_id_unique": 96096,
+  "customer_unique_id_duplicate_rows": 3345,
+  "unique_ids_with_multiple_records": 2997,
+  "max_records_per_unique_id": 17,
+  "unique_ids_with_multiple_postcodes": 250,
+  "unique_ids_with_multiple_city_states": 122,
+  "unique_ids_with_multiple_states": 39,
+  "zip_format_invalid_rows": 0,
+  "state_format_invalid_rows": 0,
+  "state_unknown_rows": 0,
+  "city_missing_rows": 0,
+  "location_review_rows": 0,
+  "leading_zero_zip_rows": 23995,
+  "distinct_state_labels": 27,
+  "distinct_city_labels": 4119,
+  "city_names_across_multiple_states": 163,
+  "all_order_rows": 99441,
+  "orders_missing_customer": 0,
+  "customer_records_without_order": 0,
+  "city_state_order_groups": 4310,
+  "orders_in_city_state_groups": 99441,
+  "orders_excluded_from_city_state_groups": 0,
+  "normalization_changes": {
+    "customer_zip_code_prefix": 0,
+    "customer_city": 0,
+    "customer_state": 0
+  }
+}

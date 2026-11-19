@@ -1,0 +1,8 @@
+﻿检查项,原始缺失数,非空但解析失败数,非有限数,非整数数,负数数,零值数
+product_name_lenght,610,0,0,0,0,0
+product_description_lenght,610,0,0,0,0,0
+product_photos_qty,610,0,0,0,0,0
+product_weight_g,2,0,0,0,0,4
+product_length_cm,2,0,0,0,0,0
+product_height_cm,2,0,0,0,0,0
+product_width_cm,2,0,0,0,0,0

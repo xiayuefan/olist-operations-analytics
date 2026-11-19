@@ -1,0 +1,89 @@
+﻿review_id,order_id,review_score,review_comment_title,review_comment_message,review_creation_date,review_answer_timestamp,is_low_score,has_comment_title,has_comment_message,flag_missing_creation_date,flag_missing_answer_timestamp,can_compare_review_time,flag_answer_before_creation,flag_review_time_needs_review,review_answer_lag_days
+6544224adabe97a933c13b87d5ed1216,3df55fc07ff463109ce0422439693aee,4,,,2017-09-12 00:00:00,2017-09-12 22:12:51,False,False,False,False,False,True,False,False,0.9255902777777778
+a59277055ee75dc9a536fd48e9c2946e,f0fbc60d51bb40c156688d9ce008237f,2,,Foi entregue uma quantidade do produto. Sendo que pedi duas quantidades ,2018-01-31 00:00:00,2018-02-01 13:52:17,True,False,True,False,False,True,False,False,1.577974537037037
+a2a33763a53c33c8f07e58d55855dc77,a17af8e6044c5ccaa87b1d97559dc554,5,,"Bom amei o produto
+",2018-03-15 00:00:00,2018-03-15 22:34:26,False,False,True,False,False,True,False,False,0.9405787037037037
+64b798072e372c1c60cc8044df9eb036,bd859dd7a6a1b8c1df9fcb75c3604eaf,2,,"produto regular
+mas as estampas sao lindas",2018-03-29 00:00:00,2018-04-04 00:02:34,True,False,True,False,False,True,False,False,6.001782407407408
+6793075d99f06d9d168e24e0d92822b7,843be4a0dcdb9716de7652d53af4acab,1,,,2017-08-12 00:00:00,2017-08-14 03:27:57,True,False,False,False,False,True,False,False,2.144409722222222
+055736c4ccc6c811c86bd9099ab09018,3cbf332e7f3e5a7c73f6106f0ba94967,5,,,2018-03-03 00:00:00,2018-03-03 09:05:06,False,False,False,False,False,True,False,False,0.3785416666666667
+85b0c36f463e19aa709b2ee1446513ce,059bbeb3477ed66fd7e670c3f879009a,5,,,2017-08-03 00:00:00,2017-08-04 09:32:59,False,False,False,False,False,True,False,False,1.3979050925925927
+64180c2c7916ed488bcb592f0f4b4921,7144ca093cbdecfdfc3e76d49da6ffb9,2,Sem recomendação,Está faltando receber um produto: Pulseira Masculina de Couro Caveira Couro Legítimo + Pedra Preto 20 ,2018-05-23 00:00:00,2018-05-24 10:50:11,True,True,True,False,False,True,False,False,1.451516203703704
+0b02c2a65dda278c123dd228d3f3cf35,6525d9ab0bff6133c63e9c0cfa55bfbd,1,,Demorou quase 15 dias pra falar que não tinha o produto no estoque... muita falta de responsabilidade da empresa.,2017-09-20 00:00:00,2017-10-06 11:29:05,True,False,True,False,False,True,False,False,16.478530092592592
+f2b68781026f05112b09cbdf35469422,96521e809c9baf75bf1a6881d39e0d8e,5,,,2017-11-04 00:00:00,2017-11-07 11:02:49,False,False,False,False,False,True,False,False,3.460289351851852
+2af839ae66a65959d6ae07775d0e7a35,bd859dd7a6a1b8c1df9fcb75c3604eaf,3,,bom,2018-03-28 00:00:00,2018-04-11 20:20:55,False,False,True,False,False,True,False,False,14.847858796296297
+347fd10f9949b67e2039a7c62611b20f,e433edc92cb5e3ae5515301b3309e303,3,,Esta entrega veio correta mas outra compra da mesma loja veio incompleta e o cartucho era falsificado,2018-03-30 00:00:00,2018-03-30 19:35:46,False,False,True,False,False,True,False,False,0.8165046296296297
+47746f14e9ac9954d196de1cfb45741e,059bbeb3477ed66fd7e670c3f879009a,2,,Só veio o puxador do lado esquerdo/motorista ,2017-08-01 00:00:00,2017-08-01 20:39:04,True,False,True,False,False,True,False,False,0.860462962962963
+03fdc89fe3999cec7b3f35eda0d6343f,7d4101163410b1380268da3933e691f1,3,,,2017-08-08 00:00:00,2017-08-09 00:04:57,False,False,False,False,False,True,False,False,1.0034375
+aa46a0c2555463941a2c09b02c2dcd92,6525d9ab0bff6133c63e9c0cfa55bfbd,5,,"Recebi o suporte e a grelha certinho, muito bom....",2017-09-16 00:00:00,2017-10-06 14:59:24,False,False,True,False,False,True,False,False,20.624583333333334
+a57234928196a67db08f6a41adbb26fe,2af768daf2646f316e9457e1f10b2428,4,,Foi entregue no prazo.,2017-07-02 00:00:00,2017-07-03 01:45:12,False,False,True,False,False,True,False,False,1.0730555555555557
+87765b23585f0c7389fd2c0b7cf512eb,ce0102221c8d12a97979c74d09cca282,3,,,2017-06-03 00:00:00,2017-06-06 11:51:37,False,False,False,False,False,True,False,False,3.494178240740741
+1b5dc3da2372e9bb5518cd37cd9a9354,5ddea4bc0239f874cd7d6fd398d6045a,2,,Demorou para entregar,2017-06-22 00:00:00,2017-06-24 23:04:49,True,False,True,False,False,True,False,False,2.961678240740741
+443fb044ca5f287b04747fb17799dbc1,3ee6f1a94cd7b1aa622553fd94a3aaf3,4,,Excelente!,2017-09-01 00:00:00,2017-09-04 14:03:42,False,False,True,False,False,True,False,False,3.5859027777777777
+3db2be53e8d7fe316c963e432ea778ab,f0fbc60d51bb40c156688d9ce008237f,5,,"So houve problemas na entrega, mas foi por causa dos Correios. Ainda sim foi entregue no prazo",2018-02-02 00:00:00,2018-02-03 11:02:06,False,False,True,False,False,True,False,False,1.4597916666666668
+443fb044ca5f287b04747fb17799dbc1,66355bca3dfaa134e807687ade5d3330,4,,Excelente!,2017-09-01 00:00:00,2017-09-04 14:03:42,False,False,True,False,False,True,False,False,3.5859027777777777
+a2a57bf2fc42d185910f9881502faa18,3cbf332e7f3e5a7c73f6106f0ba94967,2,,Recebi apenas um dos produtos e a empresa não entrou em contato comigo . ,2018-02-28 00:00:00,2018-03-01 02:08:16,True,False,True,False,False,True,False,False,1.089074074074074
+e66678cd6fa7d290355ae47145eea32e,171c9f9a5667b0bea55d8b78c27bc5bd,5,,,2017-08-04 00:00:00,2017-09-03 18:32:12,False,False,False,False,False,True,False,False,30.77236111111111
+c343e22f0398de5be948cf578a37af6c,450c49623c365a4edcf0c5a2c93aa7c9,5,,"O Primeiro produto veio com defeito. Depois que reclamei enviaram outro rapidamente, em perfeito estado e ainda levei um brinde. Pode confiar, eles respeitam o consumidor!",2017-03-09 00:00:00,2017-03-26 14:18:46,False,False,True,False,False,True,False,False,17.59636574074074
+8a020b6a9a58ad99616b28dd36581106,70c77e51e0f179d75a64a614135afb6a,3,,,2017-08-18 00:00:00,2017-08-18 14:46:08,False,False,False,False,False,True,False,False,0.6153703703703703
+06e327fb381850fdd69fba40ad61b2f2,46d2741b78a72c2f07bf0f3c34c4ceab,2,,,2017-06-02 00:00:00,2017-06-05 14:08:36,True,False,False,False,False,True,False,False,3.5893055555555557
+1b5dc3da2372e9bb5518cd37cd9a9354,2af768daf2646f316e9457e1f10b2428,2,,Demorou para entregar,2017-06-22 00:00:00,2017-06-24 23:04:49,True,False,True,False,False,True,False,False,2.961678240740741
+f592cda1f31fab0e13e67cbd638944d0,ebb2e4c3a4ed0d36a88cb8656e6a113d,2,,,2017-12-06 00:00:00,2017-12-07 18:11:37,True,False,False,False,False,True,False,False,1.7580671296296295
+47f9abdf9bff2e35b757a67e46569ddb,3ee6f1a94cd7b1aa622553fd94a3aaf3,1,,"Recebi somente o Toner da cor Ciano
+- Toner HP 311A CE311A Cyan Original Serie 126a
+
+O amarelo não recebi",2017-08-24 00:00:00,2017-08-25 13:24:05,True,False,True,False,False,True,False,False,1.5583912037037038
+f1cba0ac840dac58e4b619bd3424f443,29062384ce4975f78aeba6a496510386,1,,Na foto o produto e um e Na hora que o produto chegou e totalmente diferente .,2018-03-10 00:00:00,2018-03-14 18:21:23,True,False,True,False,False,True,False,False,4.764849537037037
+4e9a141db068cf6856ce85ce8c3ef682,71717b68820ab37f844d6799422804d7,2,,,2017-08-13 00:00:00,2017-08-15 12:44:12,True,False,False,False,False,True,False,False,2.5306944444444444
+b88c30d8714298dddb2cd56fb0fa4d57,4420cbe16c262f724b648cd1294c88b6,3,,,2017-04-11 00:00:00,2017-04-12 01:56:14,False,False,False,False,False,True,False,False,1.0807175925925927
+87765b23585f0c7389fd2c0b7cf512eb,46d2741b78a72c2f07bf0f3c34c4ceab,3,,,2017-06-03 00:00:00,2017-06-06 11:51:37,False,False,False,False,False,True,False,False,3.494178240740741
+26992df80a110294205472f015484670,21cb4961399b846b168d0358100f473b,1,,comprei dois itens (um jogo de lençol e m matizador) - chegou apenas o jogo de lençol. Não recebi retorno sobre o acontecido.,2018-02-15 00:00:00,2018-02-15 17:08:51,True,False,True,False,False,True,False,False,0.7144791666666668
+ce1c2770d9a0f9e3742fc266bd52f4ff,96f5be02bc9ffc589f3274500a64a7e2,4,Devolução complicada.,"Além do produto chegar errado, a devolução é feita pelo cliente, que tem de ir até uma agência dos Correios que aceite aquele tamanho de encomenda. Muito trabalhoso! Nunca mais.",2018-05-17 00:00:00,2018-05-20 18:13:54,False,True,True,False,False,True,False,False,3.7596527777777777
+e2fc0692ed820a5802c1505a77cf7870,96f5be02bc9ffc589f3274500a64a7e2,1,,O produto entregue não foi o produto comprado. Até o momento não consegui efetuar a troca. Estou aguardando contato da loja.,2018-04-04 00:00:00,2018-04-05 03:20:55,True,False,True,False,False,True,False,False,1.139525462962963
+64180c2c7916ed488bcb592f0f4b4921,c7e1e46af92704b1c2e1924de96e7479,2,Sem recomendação,Está faltando receber um produto: Pulseira Masculina de Couro Caveira Couro Legítimo + Pedra Preto 20 ,2018-05-23 00:00:00,2018-05-24 10:50:11,True,True,True,False,False,True,False,False,1.451516203703704
+f0b3200e9e35b724fcee709f7a98a1c4,e88f2d374afb179c85305c2e855f9d04,1,,"Comprei duas cortinas e recebi apenas uma.
+Era pra dar de presente,infelizmente não deu certo.",2017-09-01 00:00:00,2017-09-04 10:02:14,True,False,True,False,False,True,False,False,3.4182175925925926
+35f99f8617e335ae7b1abb02b68ceb64,e433edc92cb5e3ae5515301b3309e303,1,,"Comprei 3 kits de cartuchos hp contendo 1 Preto e 1 colorido cada, total de 6 mas recebi em minha casa apenas 1 Preto e 1 colorido, com nota fiscal q dizia conter 3 de cada! Aguardo providências",2018-03-20 00:00:00,2018-03-21 02:36:47,True,False,True,False,False,True,False,False,1.1088773148148148
+50134208a6947de1580ed3f0106ea24e,74b7f4373a78df8c16862d9d0875c5b4,5,,,2017-07-29 00:00:00,2017-07-31 10:50:10,False,False,False,False,False,True,False,False,2.4515046296296297
+6104981e38bcd5fb1b24f573b74b2140,28fbe65f18578f91f026300af5e6bdbc,4,,,2017-09-09 00:00:00,2017-09-12 00:23:37,False,False,False,False,False,True,False,False,3.0164004629629635
+180cde00594a0f1861206374f6064df7,cec16bf8607acd5483286d4a74fb4365,5,,,2017-12-12 00:00:00,2017-12-14 18:00:56,False,False,False,False,False,True,False,False,2.7506481481481484
+260ee32afa3b7b9ed9bc283449dfab75,f83c07d038cf7ce0132a5797f823e4fe,1,,"nao posso avaliar, sem ter recebido ",2017-12-01 00:00:00,2017-12-05 23:18:43,True,False,True,False,False,True,False,False,4.971331018518518
+925ec40f279ec4390d0c2abac192c0a3,65709b9620e3ef6f575918b8348a8ece,4,,,2018-01-27 00:00:00,2018-02-09 12:43:04,False,False,False,False,False,True,False,False,13.529907407407407
+bfed2e1c78028675ccb4a4dfbb8d5335,15fc22aad8d1b227891ce61eff4128cd,1,,,2017-09-01 00:00:00,2017-09-02 12:11:22,True,False,False,False,False,True,False,False,1.5078935185185187
+ba69d8c9ff524792f380378510bdae64,b8fdf0a70040d5461adca8f95ba4171a,3,,"Comprei um kit para casael e um para solteiro. Apesar de tê-las comprado no mesmo carrinho, paguei dois fretes e as encomendas vieram separadas. O de solteiro não foi entregue na minha casa e retornou",2018-01-06 00:00:00,2018-01-13 00:53:57,False,False,True,False,False,True,False,False,7.037465277777778
+73c709570d1dfcb3f732dec67e15e294,a56e54593f2c7f2b10f69216a7265aa5,1,,até o momento não recebi nenhum produto,2017-04-08 00:00:00,2017-04-09 14:21:25,True,False,True,False,False,True,False,False,1.5982060185185185
+9d5430030e2eee2bfc3f61e5e29d6ee8,15fc22aad8d1b227891ce61eff4128cd,3,,,2017-09-12 00:00:00,2017-09-15 00:33:36,False,False,False,False,False,True,False,False,3.023333333333334
+d66026595671c84a6ed9385f6f498e97,cec16bf8607acd5483286d4a74fb4365,1,,,2017-12-08 00:00:00,2017-12-10 21:46:33,True,False,False,False,False,True,False,False,2.9073263888888894
+f7f2ecab5ccd99cd5e2a7d8eab6d25e9,3df55fc07ff463109ce0422439693aee,1,,Recebi apenas um item desse pedido. Recebimento incompleto. ,2017-09-07 00:00:00,2017-09-08 02:19:11,True,False,True,False,False,True,False,False,1.0966550925925926
+a2a33763a53c33c8f07e58d55855dc77,29062384ce4975f78aeba6a496510386,5,,"Bom amei o produto
+",2018-03-15 00:00:00,2018-03-15 22:34:26,False,False,True,False,False,True,False,False,0.9405787037037037
+8223b52119232884ffa39d94b7fa76db,96521e809c9baf75bf1a6881d39e0d8e,1,,Veio faltando item e estou aguardando uma posição ,2017-11-01 00:00:00,2017-11-03 11:45:29,True,False,True,False,False,True,False,False,2.4899189814814813
+06e327fb381850fdd69fba40ad61b2f2,ce0102221c8d12a97979c74d09cca282,2,,,2017-06-02 00:00:00,2017-06-05 14:08:36,True,False,False,False,False,True,False,False,3.5893055555555557
+fd684b9378d1ce2b1b782508c7497990,7d4101163410b1380268da3933e691f1,1,,,2017-07-27 00:00:00,2017-07-28 00:51:49,True,False,False,False,False,True,False,False,1.0359837962962963
+c8692865914c2efea9beeabd8cad1136,74b7f4373a78df8c16862d9d0875c5b4,1,,,2017-07-28 00:00:00,2017-07-28 19:36:22,True,False,False,False,False,True,False,False,0.8169212962962963
+fd94f899386a8149947a41391714686c,21cb4961399b846b168d0358100f473b,3,,,2018-02-22 00:00:00,2018-03-21 13:45:33,False,False,False,False,False,True,False,False,27.57329861111111
+72f6ccb4b4cf569f0c40e03e327d7aa2,79675ac76b2c97ba601ce736de298724,5,,,2017-12-06 00:00:00,2017-12-09 15:34:19,False,False,False,False,False,True,False,False,3.6488310185185187
+854ce3274684322d2ad677b5246530c0,b8fdf0a70040d5461adca8f95ba4171a,1,,"Comprei dois produtos iguais, tive que pagar frete separado. E pra piorar umas das encomendas retornaou e eu não sei como vou fazer para receber minha encomenda. Não recomendo esta empresa.",2018-01-04 00:00:00,2018-01-05 16:15:21,True,False,True,False,False,True,False,False,1.677326388888889
+8a020b6a9a58ad99616b28dd36581106,71717b68820ab37f844d6799422804d7,3,,,2017-08-18 00:00:00,2017-08-18 14:46:08,False,False,False,False,False,True,False,False,0.6153703703703703
+c4cab6d06a9bca48ce665aec3fa340d4,65709b9620e3ef6f575918b8348a8ece,2,,"Comprei 4 toners (magenta, amarelo, ciano e preto). Um dos fornecedores (Tonerbras) fez a nota do amarelo e magenta porém entregou 2 magentas. Não consigo fazer a troca.",2018-01-18 00:00:00,2018-01-22 16:33:04,True,False,True,False,False,True,False,False,4.689629629629629
+e66678cd6fa7d290355ae47145eea32e,843be4a0dcdb9716de7652d53af4acab,5,,,2017-08-04 00:00:00,2017-09-03 18:32:12,False,False,False,False,False,True,False,False,30.77236111111111
+3c13b1bfbeb1111f4842bdc89f3e54f1,5795641bab8a44216bb7f551187af034,4,,"O produto chegou sem problemas. Mas, eu comprei 4 toner da mesma loja, e eles chegaram um por um... teria sido mais prático se eles tivessem chegado juntos. Foi uma sorte estar em casa todas as vezes",2018-01-25 00:00:00,2018-01-27 11:40:32,False,False,True,False,False,True,False,False,2.4864814814814813
+f1cba0ac840dac58e4b619bd3424f443,a17af8e6044c5ccaa87b1d97559dc554,1,,Na foto o produto e um e Na hora que o produto chegou e totalmente diferente .,2018-03-10 00:00:00,2018-03-14 18:21:23,True,False,True,False,False,True,False,False,4.764849537037037
+364aacc8e25e103b242a31097b2421d1,28fbe65f18578f91f026300af5e6bdbc,1,,"confuso, entrega errada, estou aguardando os produtos corretos.",2017-09-02 00:00:00,2017-09-08 01:10:34,True,False,True,False,False,True,False,False,6.04900462962963
+73c709570d1dfcb3f732dec67e15e294,4420cbe16c262f724b648cd1294c88b6,1,,até o momento não recebi nenhum produto,2017-04-08 00:00:00,2017-04-09 14:21:25,True,False,True,False,False,True,False,False,1.5982060185185185
+4e9a141db068cf6856ce85ce8c3ef682,70c77e51e0f179d75a64a614135afb6a,2,,,2017-08-13 00:00:00,2017-08-15 12:44:12,True,False,False,False,False,True,False,False,2.5306944444444444
+47f9abdf9bff2e35b757a67e46569ddb,66355bca3dfaa134e807687ade5d3330,1,,"Recebi somente o Toner da cor Ciano
+- Toner HP 311A CE311A Cyan Original Serie 126a
+
+O amarelo não recebi",2017-08-24 00:00:00,2017-08-25 13:24:05,True,False,True,False,False,True,False,False,1.5583912037037038
+9b6d1bfcb2684153758d0f72576b1a09,f83c07d038cf7ce0132a5797f823e4fe,5,,,2017-12-08 00:00:00,2017-12-10 23:46:42,False,False,False,False,False,True,False,False,2.9907638888888894
+917cdadc1a5b4cf4c988d264992f23a9,c7e1e46af92704b1c2e1924de96e7479,3,Recomendo,Recebi o produto errado.,2018-06-06 00:00:00,2018-06-07 13:53:24,False,True,True,False,False,True,False,False,1.57875
+b88c30d8714298dddb2cd56fb0fa4d57,a56e54593f2c7f2b10f69216a7265aa5,3,,,2017-04-11 00:00:00,2017-04-12 01:56:14,False,False,False,False,False,True,False,False,1.0807175925925927
+a57234928196a67db08f6a41adbb26fe,5ddea4bc0239f874cd7d6fd398d6045a,4,,Foi entregue no prazo.,2017-07-02 00:00:00,2017-07-03 01:45:12,False,False,True,False,False,True,False,False,1.0730555555555557
+778826f9af6467ff6268bbcf436cd3c5,450c49623c365a4edcf0c5a2c93aa7c9,1,,O produto foi enviado com defeito.,2017-02-22 00:00:00,2017-02-22 14:05:09,True,False,True,False,False,True,False,False,0.5869097222222223
+f592cda1f31fab0e13e67cbd638944d0,79675ac76b2c97ba601ce736de298724,2,,,2017-12-06 00:00:00,2017-12-07 18:11:37,True,False,False,False,False,True,False,False,1.7580671296296295
+72f6ccb4b4cf569f0c40e03e327d7aa2,ebb2e4c3a4ed0d36a88cb8656e6a113d,5,,,2017-12-06 00:00:00,2017-12-09 15:34:19,False,False,False,False,False,True,False,False,3.6488310185185187
+afdb3e7917cf0c8fdac2c66ed9f68ed1,e88f2d374afb179c85305c2e855f9d04,5,,"Lindo,fácil de limpar, ótimo custo benefício.",2017-09-01 00:00:00,2017-09-04 21:25:36,False,False,True,False,False,True,False,False,3.892777777777778
+6793075d99f06d9d168e24e0d92822b7,171c9f9a5667b0bea55d8b78c27bc5bd,1,,,2017-08-12 00:00:00,2017-08-14 03:27:57,True,False,False,False,False,True,False,False,2.144409722222222
+917cdadc1a5b4cf4c988d264992f23a9,7144ca093cbdecfdfc3e76d49da6ffb9,3,Recomendo,Recebi o produto errado.,2018-06-06 00:00:00,2018-06-07 13:53:24,False,True,True,False,False,True,False,False,1.57875
+60f5f0a052e9e69714ac1cdb485b8715,5795641bab8a44216bb7f551187af034,1,,,2018-01-21 00:00:00,2018-01-22 00:47:30,True,False,False,False,False,True,False,False,1.0329861111111112

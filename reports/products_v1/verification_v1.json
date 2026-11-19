@@ -1,0 +1,16 @@
+{
+  "protected_files_unchanged": 104,
+  "existing_notebook_changed_during_work_and_preserved": [
+    "${PROJECT_ROOT}\\notebooks\\12_商品表与品类翻译.ipynb"
+  ],
+  "raw_sources_and_prior_code_reports_unchanged": true,
+  "new_notebook_format_valid": true,
+  "new_notebook_code_cells_executed": 7,
+  "unit_tests_passed": 7,
+  "tested_environments": [
+    "Python 3.7.4 / Pandas 1.1.5",
+    "Python 3.12 / Pandas 3.0.1"
+  ],
+  "csv_roundtrip_money_and_missing_values": true,
+  "control_totals_all_zero": true
+}

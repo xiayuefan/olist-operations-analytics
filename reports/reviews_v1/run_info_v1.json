@@ -1,0 +1,31 @@
+{
+  "version": "reviews_v1",
+  "source_dir": "${RAW_DATA_DIR}",
+  "source_sha256": {
+    "olist_order_reviews_dataset.csv": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+    "olist_orders_dataset.csv": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf"
+  },
+  "python": "3.7.4",
+  "pandas": "1.1.5",
+  "input_review_rows": 99224,
+  "output_clean_review_rows": 99224,
+  "deleted_review_rows": 0,
+  "input_order_rows": 99441,
+  "output_order_rows": 99441,
+  "scope": "全量历史、全部状态，有有效评价的订单用于当前比例基线",
+  "low_score_rule": "review_score <= 2（仅 1 或 2 分）",
+  "primary_order_rule": "每单最大 review_answer_timestamp 对应的有效评分",
+  "comparison_order_rule": "每单任意一次有效评分 <= 2",
+  "latest_tie_policy": "同订单最新提交时间并列时停止，需明确规则",
+  "missing_or_reversed_answer_policy": "保留明细，选择最新评价前停止核查，不猜测时间",
+  "missing_review_policy": "订单保留，评分和布尔标记未知，不填 False",
+  "rule_disagreement_sample_order_id": "059bbeb3477ed66fd7e670c3f879009a",
+  "output_dir": "${PROJECT_ROOT}\\data\\processed\\reviews_v1",
+  "csv_types": "恢复 Int64、boolean 和日期；读取原始字符串时 keep_default_na=False, na_values=['']",
+  "pending_checks": [
+    "评价 ID 跨订单复用的业务原因",
+    "长问卷提交间隔原因",
+    "正式状态、日期和评价可见性窗口",
+    "其他维表、Parquet、MySQL 和 Power BI"
+  ]
+}

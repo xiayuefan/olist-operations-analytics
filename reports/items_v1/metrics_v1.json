@@ -1,0 +1,17 @@
+{
+  "item_rows": 112650,
+  "orders_with_items": 98666,
+  "all_order_rows": 99441,
+  "orders_missing_items": 775,
+  "priority_missing_items": 3,
+  "zero_freight_item_rows": 383,
+  "zero_freight_orders": 338,
+  "zero_price_item_rows": 0,
+  "missing_shipping_limit_rows": 0,
+  "all_goods_cents": 1359164370,
+  "all_freight_cents": 225190954,
+  "delivered_orders": 96478,
+  "delivered_goods_cents": 1322149811,
+  "delivered_freight_cents": 219827564,
+  "delivered_goods_aov_brl": 137.0415857501192
+}

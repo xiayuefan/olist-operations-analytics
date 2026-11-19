@@ -1,0 +1,9 @@
+{
+  "engine": "Pandas / scikit-learn; independent recomputation, not MySQL execution",
+  "window_start": "2017-01-01",
+  "window_end_exclusive": "2018-09-01",
+  "delivered_orders": 96211,
+  "valid_delay_orders": 96203,
+  "goods_cents": 1318102713,
+  "tables": 22
+}

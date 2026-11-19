@@ -1,0 +1,1418 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"orders\",\"order_items\",\"Customers\",\"ProductCategories\",\"SellerSnapshot\",\"CustomerRFM\",\"MonthlyPurchase\",\"CustomerCohort\",\"Calendar\",\"成交额拆解步骤\",\"指标\",\"DataRoot\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"D:\\数据分析\\releases\\2026-11-19\\olist-operations-analytics-github\\powerbi\\Olist\\data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "8abb4fa3-7ffa-42b4-ae77-dd77675d645b"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "471d04f5ef2884844dff",
+        "fromColumn": "purchase_date",
+        "fromTable": "orders",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "d63eca6822d7260541d0",
+        "fromColumn": "customer_id",
+        "fromTable": "orders",
+        "toColumn": "customer_id",
+        "toTable": "Customers"
+      },
+      {
+        "name": "a9ce3ba5e298a63a0722",
+        "fromColumn": "order_id",
+        "fromTable": "order_items",
+        "toColumn": "order_id",
+        "toTable": "orders"
+      },
+      {
+        "name": "1cbe116d519dbb2130d4",
+        "fromColumn": "product_id",
+        "fromTable": "order_items",
+        "toColumn": "product_id",
+        "toTable": "ProductCategories"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "orders",
+        "columns": [
+          {
+            "name": "order_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "6a977a2a-e9e4-490d-af25-956682889829",
+            "sourceColumn": "order_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "e2e2c6ac-4bd3-4e85-bf49-9254d4a5ece0",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "order_status",
+            "dataType": "string",
+            "lineageTag": "3cc5f250-ad98-4024-a853-254adfacdbd4",
+            "sourceColumn": "order_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "purchase_date",
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "5774ce62-9b67-4d43-a829-faa50575793b",
+            "sourceColumn": "purchase_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "order_purchase_timestamp",
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd HH:mm:ss",
+            "lineageTag": "6360e40a-24c9-441c-93c0-39cf4a14a79e",
+            "sourceColumn": "order_purchase_timestamp",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_valid_delay",
+            "dataType": "boolean",
+            "lineageTag": "0239a8de-5f37-4227-a3b2-816f8fac8f8b",
+            "sourceColumn": "is_valid_delay",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delivery_delay_days",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "f8ee8f3c-a504-45ba-8e10-96a2f1a7759e",
+            "sourceColumn": "delivery_delay_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "transit_days",
+            "dataType": "double",
+            "lineageTag": "68031d41-010b-4629-baf9-943a694da524",
+            "sourceColumn": "transit_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latest_review_score",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "4a21fd00-0f57-4c48-a86e-e76940132339",
+            "sourceColumn": "latest_review_score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delay_band",
+            "dataType": "string",
+            "lineageTag": "ff0b193d-5bbf-4e98-b454-6f2144e60578",
+            "sortByColumn": "delay_band_order",
+            "sourceColumn": "delay_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delay_band_order",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "a505c952-449a-438b-bf56-da86ddca0ccf",
+            "sourceColumn": "delay_band_order",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "approval_days",
+            "dataType": "double",
+            "lineageTag": "d5f09a25-ceb5-47ac-9b34-eb33682942d6",
+            "sourceColumn": "approval_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "handoff_days",
+            "dataType": "double",
+            "lineageTag": "10b13d44-d1df-497e-b0b8-2e8fab959cee",
+            "sourceColumn": "handoff_days",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a8694df1-fdb9-4f11-a6e3-a32077716732",
+        "partitions": [
+          {
+            "name": "orders",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\orders.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "order_items",
+        "columns": [
+          {
+            "name": "order_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "8d120e8c-02ee-4e4a-9269-ae88da82045b",
+            "sourceColumn": "order_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "order_item_id",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "c628de28-7b3a-4684-aa9f-779a7baa17dd",
+            "sourceColumn": "order_item_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "91edf3b1-f6d5-4de9-b545-c98672a72c8e",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "price_cents",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "804c0caa-dc37-4161-a942-3d9f698deb48",
+            "sourceColumn": "price_cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "freight_cents",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "4b9e37c9-4ba0-4361-9180-40d63dc4f50c",
+            "sourceColumn": "freight_cents",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "cc7f20e8-b586-464c-8f63-4527ae5f6684",
+        "partitions": [
+          {
+            "name": "order_items",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\order_items.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Customers",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "34224ae8-5e4d-47aa-b10c-8c3b0606208d",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_state",
+            "dataType": "string",
+            "lineageTag": "1ecdf683-fa3c-409e-ac02-6e83ff596c6f",
+            "sourceColumn": "customer_state",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "62a71cfb-11a2-43d6-8b18-e458e55d421b",
+        "partitions": [
+          {
+            "name": "Customers",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\Customers.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ProductCategories",
+        "columns": [
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "7e83597c-4432-4d0a-b42d-405e96d1b5da",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "category_key",
+            "dataType": "string",
+            "lineageTag": "051b384c-780f-4f6c-aca9-d2a70da49896",
+            "sourceColumn": "category_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "category_label",
+            "dataType": "string",
+            "lineageTag": "f4d16ffc-ac38-442a-b7ab-9f058048102c",
+            "sourceColumn": "category_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "category_mapping",
+            "dataType": "string",
+            "lineageTag": "fa2b8a0c-f067-40a5-890e-29774e2e678a",
+            "sourceColumn": "category_mapping",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d8d687c0-60ef-4b92-88fb-e7a7fbe3530f",
+        "partitions": [
+          {
+            "name": "ProductCategories",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\ProductCategories.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SellerSnapshot",
+        "columns": [
+          {
+            "name": "seller_id",
+            "dataType": "string",
+            "lineageTag": "b54233b9-3c4f-49e8-a49b-56f340bc7167",
+            "sourceColumn": "seller_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "single_seller_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "94a3f1dc-2dab-45eb-b3d6-3be9654f56ae",
+            "sourceColumn": "single_seller_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "valid_delay_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "654c54f1-7b34-4bc9-b509-44ab529ad1d4",
+            "sourceColumn": "valid_delay_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "late_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "d3cb83b6-e85d-4fb2-9cdc-643a8f25cb19",
+            "sourceColumn": "late_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rated_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "2b46ba22-7ea1-4a1d-8e75-1bad1092969b",
+            "sourceColumn": "rated_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "low_score_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "5175911f-0d62-420b-b8c4-42d93023c19f",
+            "sourceColumn": "low_score_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rule_candidate",
+            "dataType": "boolean",
+            "lineageTag": "9656f869-faa2-4adb-be73-0b889becacdd",
+            "sourceColumn": "rule_candidate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pc1",
+            "dataType": "double",
+            "lineageTag": "77d02837-00b5-46db-8b10-0e55db166682",
+            "sourceColumn": "pc1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pc2",
+            "dataType": "double",
+            "lineageTag": "c532d371-10cb-4202-89f1-d454b9753488",
+            "sourceColumn": "pc2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cluster_label",
+            "dataType": "string",
+            "lineageTag": "d144ced5-30c0-42c2-846e-63fbe97418d8",
+            "sourceColumn": "cluster_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "seller_state",
+            "dataType": "string",
+            "lineageTag": "76231635-6ea2-41c8-b2e8-f37d53bafe41",
+            "sourceColumn": "seller_state",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "846777eb-8956-4e92-b523-fd748afb5389",
+        "partitions": [
+          {
+            "name": "SellerSnapshot",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\SellerSnapshot.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CustomerRFM",
+        "columns": [
+          {
+            "name": "frequency_group",
+            "dataType": "string",
+            "lineageTag": "97e6de44-7992-4c60-bf19-d050b91568ef",
+            "sourceColumn": "frequency_group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "recency_group",
+            "dataType": "string",
+            "lineageTag": "a5ec6b3b-753a-4265-b17b-a3d7ec9bbc51",
+            "sourceColumn": "recency_group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "monetary_group",
+            "dataType": "string",
+            "lineageTag": "c503a2ce-8423-4dd7-9ab8-28efff2fa557",
+            "sourceColumn": "monetary_group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_cutoff_cents",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "6f7efda2-76f7-415f-b009-d98d96cc3c9a",
+            "sourceColumn": "m_cutoff_cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_count",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "8b12d16a-3345-47f0-be92-b279ef4ae19e",
+            "sourceColumn": "customer_count",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delivered_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "eebfada1-fa5b-4881-936d-d4250b40a57c",
+            "sourceColumn": "delivered_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "goods_cents",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "a51df432-6ddc-4b95-bceb-a7878a6a3247",
+            "sourceColumn": "goods_cents",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5183d379-62ee-48a5-9780-38faa1d68292",
+        "partitions": [
+          {
+            "name": "CustomerRFM",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\CustomerRFM.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MonthlyPurchase",
+        "columns": [
+          {
+            "name": "purchase_month",
+            "dataType": "string",
+            "lineageTag": "e3c9cc95-da74-4f6e-9831-5c1c8a52d19e",
+            "sourceColumn": "purchase_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "first_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "7776dd1e-20b6-47c2-95dd-1c48110372b4",
+            "sourceColumn": "first_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "repeat_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "58262d03-f1c3-4995-874f-6827d6b61e5b",
+            "sourceColumn": "repeat_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delivered_orders",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "8130a27c-e188-4577-8133-87a1b532c7cf",
+            "sourceColumn": "delivered_orders",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "679ef82f-d7b9-4158-9277-b4e4e51143f8",
+        "partitions": [
+          {
+            "name": "MonthlyPurchase",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\MonthlyPurchase.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CustomerCohort",
+        "columns": [
+          {
+            "name": "first_purchase_month",
+            "dataType": "string",
+            "lineageTag": "ef57bf99-7e15-43ab-bbbc-65d183b8f1dc",
+            "sourceColumn": "first_purchase_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cohort_customers",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "cdd2a08d-61ec-429c-b051-d26d386433cb",
+            "sourceColumn": "cohort_customers",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "eligible_customers",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "32eac767-d547-4a29-8960-4541234c332f",
+            "sourceColumn": "eligible_customers",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "repeat_customers",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "2b0d42d4-b7ab-4f40-ad3b-9d275e8618a8",
+            "sourceColumn": "repeat_customers",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "followup_days",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "a24bbc68-9b7f-465f-83a9-dbc0e0dc6a62",
+            "sourceColumn": "followup_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pending_customers",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "44261964-e018-407c-941f-1cc733fd5c21",
+            "sourceColumn": "pending_customers",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4a8c7629-354c-4eff-bc51-f56bab702dea",
+        "partitions": [
+          {
+            "name": "CustomerCohort",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\CustomerCohort.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "annotations": [
+          {
+            "name": "__PBI_TimeIntelligenceEnabled",
+            "value": "0"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "isKey": true,
+            "lineageTag": "5e936c3a-f498-4feb-81a5-dc7cce36ef95",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "YearMonth",
+            "dataType": "string",
+            "lineageTag": "64e8ea73-75b0-4bb5-ad2e-d757a4817832",
+            "sourceColumn": "YearMonth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "经营窗口",
+            "dataType": "boolean",
+            "lineageTag": "97c44f8b-c42c-4374-94b3-e2c7a5bd90cb",
+            "sourceColumn": "经营窗口",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7bc3ad8f-1ac9-4066-9678-a50103fd4f6f",
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\Calendar.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "成交额拆解步骤",
+        "columns": [
+          {
+            "name": "步骤序号",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "1f0b714b-0eb0-4d7c-aa79-f27f59ad3948",
+            "sourceColumn": "步骤序号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "步骤",
+            "dataType": "string",
+            "lineageTag": "fe0b97c2-4571-481c-8167-97c617768b57",
+            "sortByColumn": "步骤序号",
+            "sourceColumn": "步骤",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6ea7f69b-9c33-4175-9676-1702335bc9df",
+        "partitions": [
+          {
+            "name": "成交额拆解步骤",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\成交额拆解步骤.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "指标",
+        "columns": [
+          {
+            "name": "说明",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "4d363c07-a9c4-49ce-ab4b-14d79848a03d",
+            "sourceColumn": "说明",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e537a155-8db9-4139-8611-b4bd8c680afd",
+        "measures": [
+          {
+            "name": "下单订单数",
+            "displayFolder": "经营",
+            "expression": "COUNTROWS ( orders )",
+            "formatString": "#,0",
+            "lineageTag": "0c5bd742-a68d-4cc0-9374-ad433c89c61a"
+          },
+          {
+            "name": "已交付订单数",
+            "displayFolder": "经营",
+            "expression": "CALCULATE ( [下单订单数], orders[order_status] = \"delivered\" )",
+            "formatString": "#,0",
+            "lineageTag": "f92fdba5-fb01-44af-955b-828d32dcbd36"
+          },
+          {
+            "name": "商品成交额（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "DIVIDE (",
+              "    CALCULATE ( SUM ( order_items[price_cents] ), orders[order_status] = \"delivered\" ),",
+              "    100",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "c4caa9e4-20c9-4bfd-b2e5-80e17c01d245"
+          },
+          {
+            "name": "交付率",
+            "displayFolder": "经营",
+            "expression": "DIVIDE ( [已交付订单数], [下单订单数] )",
+            "formatString": "0.00%",
+            "lineageTag": "820b27f9-a5a0-4c50-89df-b098ab11cad7"
+          },
+          {
+            "name": "有商品明细的已交付订单数",
+            "displayFolder": "经营",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( order_items[order_id] ),",
+              "    orders[order_status] = \"delivered\"",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "fb4f7da8-05ad-461c-a183-c65a5f0286b0"
+          },
+          {
+            "name": "商品客单价（BRL）",
+            "displayFolder": "经营",
+            "expression": "DIVIDE ( [商品成交额（BRL）], [有商品明细的已交付订单数] )",
+            "formatString": "#,0.00",
+            "lineageTag": "142a0e88-ca4a-4b82-9d7a-ebd746e1d41f"
+          },
+          {
+            "name": "上月商品成交额（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "IF (",
+              "    HASONEVALUE ( 'Calendar'[YearMonth] ),",
+              "    VAR LastVisibleDate = MAX ( 'Calendar'[Date] )",
+              "    VAR CurrentMonthStart = EOMONTH ( LastVisibleDate, -1 ) + 1",
+              "    VAR PreviousMonthStart = EOMONTH ( LastVisibleDate, -2 ) + 1",
+              "    VAR IsFullMonth =",
+              "        COUNTROWS ( VALUES ( 'Calendar'[Date] ) ) = DAY ( EOMONTH ( LastVisibleDate, 0 ) )",
+              "    RETURN",
+              "        IF (",
+              "            IsFullMonth && PreviousMonthStart >= DATE ( 2017, 1, 1 ),",
+              "            CALCULATE (",
+              "                [商品成交额（BRL）],",
+              "                FILTER (",
+              "                    ALL ( 'Calendar' ),",
+              "                    'Calendar'[Date] >= PreviousMonthStart",
+              "                        && 'Calendar'[Date] < CurrentMonthStart",
+              "                )",
+              "            )",
+              "        )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "9a98ce74-85d7-405d-bb2e-bb838f01ec3b"
+          },
+          {
+            "name": "商品成交额环比",
+            "displayFolder": "经营",
+            "expression": [
+              "VAR PreviousAmount = [上月商品成交额（BRL）]",
+              "VAR CurrentAmount = [商品成交额（BRL）]",
+              "RETURN",
+              "    IF (",
+              "        NOT ISBLANK ( CurrentAmount ),",
+              "        DIVIDE ( CurrentAmount - PreviousAmount, PreviousAmount )",
+              "    )"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "a18128b5-3971-49d6-90ed-4a551a963ca1"
+          },
+          {
+            "name": "上月有商品明细的已交付订单数",
+            "displayFolder": "经营",
+            "expression": [
+              "IF (",
+              "    NOT ISBLANK ( [上月商品成交额（BRL）] ),",
+              "    VAR LastVisibleDate = MAX ( 'Calendar'[Date] )",
+              "    VAR CurrentMonthStart = EOMONTH ( LastVisibleDate, -1 ) + 1",
+              "    VAR PreviousMonthStart = EOMONTH ( LastVisibleDate, -2 ) + 1",
+              "    RETURN",
+              "        CALCULATE (",
+              "            [有商品明细的已交付订单数],",
+              "            FILTER (",
+              "                ALL ( 'Calendar' ),",
+              "                'Calendar'[Date] >= PreviousMonthStart",
+              "                    && 'Calendar'[Date] < CurrentMonthStart",
+              "            )",
+              "        )",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "a53a9fd4-dca3-4859-b396-a128d551ee5f"
+          },
+          {
+            "name": "商品成交额变动（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "IF (",
+              "    [有商品明细的已交付订单数] > 0",
+              "        && [上月有商品明细的已交付订单数] > 0,",
+              "    ROUND ( [商品成交额（BRL）] - [上月商品成交额（BRL）], 2 )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "3af6007b-f3c1-4876-aafe-adbaa75fa5fa"
+          },
+          {
+            "name": "订单量贡献（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "VAR ChangeAmount = [商品成交额变动（BRL）]",
+              "VAR Previousorders = [上月有商品明细的已交付订单数]",
+              "VAR PreviousAOV = DIVIDE ( [上月商品成交额（BRL）], Previousorders )",
+              "RETURN",
+              "    IF (",
+              "        NOT ISBLANK ( ChangeAmount ),",
+              "        ROUND ( ( [有商品明细的已交付订单数] - Previousorders ) * PreviousAOV, 2 )",
+              "    )"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "324423a9-fada-4aa9-9316-8c2405cd05aa"
+          },
+          {
+            "name": "客单价贡献（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "VAR ChangeAmount = [商品成交额变动（BRL）]",
+              "RETURN",
+              "    IF (",
+              "        NOT ISBLANK ( ChangeAmount ),",
+              "        ROUND ( ChangeAmount - [订单量贡献（BRL）], 2 )",
+              "    )"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "f2890c25-04d6-4374-b888-4156e3113f46"
+          },
+          {
+            "name": "瀑布图金额（BRL）",
+            "displayFolder": "经营",
+            "expression": [
+              "// 只有本月和上月可比较时才画图，沿用上一课的判断。",
+              "VAR ChangeAmount = [商品成交额变动（BRL）]",
+              "// 每根柱子只对应一个步骤序号。",
+              "VAR StepNumber = SELECTEDVALUE ( '成交额拆解步骤'[步骤序号] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ISBLANK ( ChangeAmount ),",
+              "        SWITCH (",
+              "            StepNumber,",
+              "            1, [上月商品成交额（BRL）],",
+              "            2, [订单量贡献（BRL）],",
+              "            3, [客单价贡献（BRL）]",
+              "        )",
+              "    )"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "55376d8b-a183-4e60-86b0-f91f23649dfc"
+          },
+          {
+            "name": "可判断延迟订单数",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [已交付订单数], KEEPFILTERS ( orders[delay_band_order] >= 1 ) )",
+            "formatString": "#,0",
+            "lineageTag": "d2b6fcd9-d559-4bd9-b064-5b6c93773efa"
+          },
+          {
+            "name": "延迟订单数",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [已交付订单数], KEEPFILTERS ( orders[delay_band_order] >= 2 ) )",
+            "formatString": "#,0",
+            "lineageTag": "0fc59bf5-f7dd-4a35-bae2-ec7682a19d32"
+          },
+          {
+            "name": "延迟率",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( COALESCE ( [延迟订单数], 0 ), [可判断延迟订单数] )",
+            "formatString": "0.00%",
+            "lineageTag": "1dd1ec4e-86d1-4469-8874-409e085f0ecc"
+          },
+          {
+            "name": "有有效评分订单数",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( COUNT ( orders[latest_review_score] ), orders[order_status] = \"delivered\" )",
+            "formatString": "#,0",
+            "lineageTag": "9adec399-323d-41a3-ab96-27c7bcca63fd"
+          },
+          {
+            "name": "低评分订单数",
+            "displayFolder": "专题",
+            "expression": [
+              "CALCULATE (",
+              "    [已交付订单数],",
+              "    KEEPFILTERS ( orders[latest_review_score] IN { 1, 2 } )",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "a7e39dc1-4410-4128-8c40-da0e4cb3394e"
+          },
+          {
+            "name": "低评分率",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( COALESCE ( [低评分订单数], 0 ), [有有效评分订单数] )",
+            "formatString": "0.00%",
+            "lineageTag": "ba5ba030-c7b1-40af-8ec5-6b8a946a3e1e"
+          },
+          {
+            "name": "已交付运费（BRL）",
+            "displayFolder": "专题",
+            "expression": [
+              "DIVIDE (",
+              "    CALCULATE ( SUM ( order_items[freight_cents] ), orders[order_status] = \"delivered\" ),",
+              "    100",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "f9f3c56c-35fa-4aad-84c0-52de40f3768b"
+          },
+          {
+            "name": "运费占商品金额比",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( [已交付运费（BRL）], [商品成交额（BRL）] )",
+            "formatString": "0.00%",
+            "lineageTag": "2ac5030e-b2b8-493a-982e-38a637ae6baf"
+          },
+          {
+            "name": "品类成交额占比",
+            "displayFolder": "专题",
+            "expression": [
+              "DIVIDE (",
+              "    [商品成交额（BRL）],",
+              "    CALCULATE ( [商品成交额（BRL）], ALLSELECTED ( ProductCategories[category_label] ) )",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "e5a9850d-e5cf-4c33-b208-a229a94d3502"
+          },
+          {
+            "name": "客户州成交额占比",
+            "displayFolder": "专题",
+            "expression": [
+              "DIVIDE (",
+              "    [商品成交额（BRL）],",
+              "    CALCULATE ( [商品成交额（BRL）], ALLSELECTED ( Customers[customer_state] ) )",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "509856db-f9b5-4b59-8bf8-a0ec8886f545"
+          },
+          {
+            "name": "分组成交额月变动（BRL）",
+            "displayFolder": "专题",
+            "expression": [
+              "// 先在整个品类和客户范围判断两个月可否比较，再回到当前分组取金额。",
+              "VAR CanCompare =",
+              "    NOT ISBLANK (",
+              "        CALCULATE (",
+              "            [商品成交额变动（BRL）],",
+              "            REMOVEFILTERS ( ProductCategories ),",
+              "            REMOVEFILTERS ( Customers )",
+              "        )",
+              "    )",
+              "VAR CurrentAmount = [商品成交额（BRL）]",
+              "VAR PreviousAmount = [上月商品成交额（BRL）]",
+              "RETURN",
+              "    IF (",
+              "        CanCompare && NOT ( ISBLANK ( CurrentAmount ) && ISBLANK ( PreviousAmount ) ),",
+              "        COALESCE ( CurrentAmount, 0 ) - COALESCE ( PreviousAmount, 0 )",
+              "    )"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "b7ceef48-0e29-4676-a319-66fd5f260001"
+          },
+          {
+            "name": "无法判断延迟订单数",
+            "displayFolder": "专题",
+            "expression": [
+              "IF (",
+              "    NOT ISBLANK ( [已交付订单数] ),",
+              "    [已交付订单数] - COALESCE ( [可判断延迟订单数], 0 )",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "3d920abc-b4c1-4231-a344-ba15ed89ba84"
+          },
+          {
+            "name": "审批有效订单数",
+            "displayFolder": "专题",
+            "expression": "COUNT ( orders[approval_days] )",
+            "formatString": "#,0",
+            "lineageTag": "5a63845b-db66-4036-a889-fdb460ee37a5"
+          },
+          {
+            "name": "审批 P50（天）",
+            "displayFolder": "专题",
+            "expression": [
+              "IF (",
+              "    [审批有效订单数] > 0,",
+              "    MEDIANX ( FILTER ( orders, NOT ISBLANK ( orders[approval_days] ) ), orders[approval_days] )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "96fe0e7b-7557-471f-932d-c3c9d87c2a1b"
+          },
+          {
+            "name": "审批 P90（天）",
+            "displayFolder": "专题",
+            "expression": [
+              "IF (",
+              "    [审批有效订单数] > 0,",
+              "    PERCENTILEX.INC ( FILTER ( orders, NOT ISBLANK ( orders[approval_days] ) ), orders[approval_days], 0.9 )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "8a0758ce-b03a-4db5-b8f4-b9e5c043125b"
+          },
+          {
+            "name": "延迟样本评价覆盖率",
+            "displayFolder": "专题",
+            "expression": [
+              "DIVIDE (",
+              "    COALESCE (",
+              "        CALCULATE ( [有有效评分订单数], KEEPFILTERS ( orders[delay_band_order] >= 1 ) ),",
+              "        0",
+              "    ),",
+              "    [可判断延迟订单数]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "1405e2a5-6010-4d56-9a0c-f2a67d8a7468"
+          },
+          {
+            "name": "按时或提前组低评分率",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [低评分率], KEEPFILTERS ( orders[delay_band_order] = 1 ) )",
+            "formatString": "0.00%",
+            "lineageTag": "44b05fec-9842-4105-9745-383285d5e8e2"
+          },
+          {
+            "name": "延迟组低评分率",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [低评分率], KEEPFILTERS ( orders[delay_band_order] >= 2 ) )",
+            "formatString": "0.00%",
+            "lineageTag": "1a03332c-58a7-432a-80a0-606cc58b9da5"
+          },
+          {
+            "name": "延迟与按时低评差（百分点）",
+            "displayFolder": "专题",
+            "expression": [
+              "VAR LateRate = [延迟组低评分率]",
+              "VAR OnTimeRate = [按时或提前组低评分率]",
+              "RETURN",
+              "    IF ( NOT ISBLANK ( LateRate ) && NOT ISBLANK ( OnTimeRate ), 100 * ( LateRate - OnTimeRate ) )"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "ca05fdfa-ec9b-4f60-bd5a-3577ff902a4f"
+          },
+          {
+            "name": "低评 Wilson 下限",
+            "displayFolder": "专题",
+            "expression": [
+              "VAR N = [有有效评分订单数]",
+              "VAR P = [低评分率]",
+              "VAR Z = 1.96",
+              "VAR Z2 = Z * Z",
+              "RETURN",
+              "    IF (",
+              "        N > 0,",
+              "        DIVIDE ( P + Z2 / ( 2 * N ) - Z * SQRT ( P * ( 1 - P ) / N + Z2 / ( 4 * N * N ) ), 1 + Z2 / N )",
+              "    )"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "2107bcbd-7567-4d61-9adf-9af9f3bd82fa"
+          },
+          {
+            "name": "参与聚类卖家数",
+            "displayFolder": "专题",
+            "expression": "COUNT ( SellerSnapshot[pc1] )",
+            "formatString": "#,0",
+            "lineageTag": "ffd43e58-c60f-454d-9a54-56bd1efee944"
+          },
+          {
+            "name": "建议核查卖家数",
+            "displayFolder": "专题",
+            "expression": [
+              "COALESCE (",
+              "    CALCULATE ( COUNTROWS ( SellerSnapshot ), KEEPFILTERS ( SellerSnapshot[rule_candidate] = TRUE () ) ),",
+              "    0",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "a14531ad-4463-4051-ac0d-c251bfbdc6ba"
+          },
+          {
+            "name": "卖家延迟率",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( SUM ( SellerSnapshot[late_orders] ), SUM ( SellerSnapshot[valid_delay_orders] ) )",
+            "formatString": "0.00%",
+            "lineageTag": "34816025-d502-4d80-a149-470431c8cbbc"
+          },
+          {
+            "name": "卖家低评分率",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( SUM ( SellerSnapshot[low_score_orders] ), SUM ( SellerSnapshot[rated_orders] ) )",
+            "formatString": "0.00%",
+            "lineageTag": "ee002f85-1eb9-4f2c-87bc-ddfb8c1ab81a"
+          },
+          {
+            "name": "单卖家延迟基线",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [卖家延迟率], REMOVEFILTERS ( SellerSnapshot ) )",
+            "formatString": "0.00%",
+            "lineageTag": "777b665f-7b17-4e9c-9301-629ee2ece839"
+          },
+          {
+            "name": "单卖家低评基线",
+            "displayFolder": "专题",
+            "expression": "CALCULATE ( [卖家低评分率], REMOVEFILTERS ( SellerSnapshot ) )",
+            "formatString": "0.00%",
+            "lineageTag": "58c667d0-baf3-44f0-91db-7635a84f6070"
+          },
+          {
+            "name": "RFM 客户数",
+            "displayFolder": "专题",
+            "expression": "SUM ( CustomerRFM[customer_count] )",
+            "formatString": "#,0",
+            "lineageTag": "0427e69a-29c7-4a90-a863-aadd344d224b"
+          },
+          {
+            "name": "RFM 已交付订单数",
+            "displayFolder": "专题",
+            "expression": "SUM ( CustomerRFM[delivered_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "6d3848d5-d79a-41b8-b7d3-854ce63905fe"
+          },
+          {
+            "name": "RFM 商品成交额（BRL）",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( SUM ( CustomerRFM[goods_cents] ), 100 )",
+            "formatString": "#,0.00",
+            "lineageTag": "fa41d736-fc6e-41f4-a35f-689f78de5354"
+          },
+          {
+            "name": "RFM 客户人均商品金额（BRL）",
+            "displayFolder": "专题",
+            "expression": [
+              "DIVIDE (",
+              "    [RFM 商品成交额（BRL）],",
+              "    CALCULATE ( [RFM 客户数], KEEPFILTERS ( CustomerRFM[monetary_group] <> \"unknown_m\" ) )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "cf35fd36-3aef-4606-91dc-9893730a2f1d"
+          },
+          {
+            "name": "RFM 组内 P75（BRL）",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( SELECTEDVALUE ( CustomerRFM[m_cutoff_cents] ), 100 )",
+            "formatString": "#,0.00",
+            "lineageTag": "a85bdb40-a7fc-4cbe-9322-7dd376c1b37a"
+          },
+          {
+            "name": "后续购买订单占比",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( SUM ( MonthlyPurchase[repeat_orders] ), SUM ( MonthlyPurchase[delivered_orders] ) )",
+            "formatString": "0.00%",
+            "lineageTag": "20345af2-85a2-447f-9bb4-bddab2f9327d"
+          },
+          {
+            "name": "首购客户数",
+            "displayFolder": "专题",
+            "expression": "IF ( HASONEVALUE ( CustomerCohort[followup_days] ), SUM ( CustomerCohort[cohort_customers] ) )",
+            "formatString": "#,0",
+            "lineageTag": "6970a187-59de-49b9-882c-1b913f04e32e"
+          },
+          {
+            "name": "随访完整客户数",
+            "displayFolder": "专题",
+            "expression": "IF ( HASONEVALUE ( CustomerCohort[followup_days] ), SUM ( CustomerCohort[eligible_customers] ) )",
+            "formatString": "#,0",
+            "lineageTag": "583be0ee-ea71-4c1e-8268-9bae34fdcdc7"
+          },
+          {
+            "name": "待成熟客户数",
+            "displayFolder": "专题",
+            "expression": "IF ( HASONEVALUE ( CustomerCohort[followup_days] ), SUM ( CustomerCohort[pending_customers] ) )",
+            "formatString": "#,0",
+            "lineageTag": "f0c0132b-e776-4a5f-9400-07da97553bb5"
+          },
+          {
+            "name": "窗口内复购客户数",
+            "displayFolder": "专题",
+            "expression": [
+              "IF (",
+              "    HASONEVALUE ( CustomerCohort[followup_days] )",
+              "        && HASONEVALUE ( CustomerCohort[first_purchase_month] )",
+              "        && [首购客户数] > 0",
+              "        && [随访完整客户数] = [首购客户数],",
+              "    SUM ( CustomerCohort[repeat_customers] )",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "c1320948-f00d-4fae-8ab1-081a013a83b9"
+          },
+          {
+            "name": "完整窗口复购率",
+            "displayFolder": "专题",
+            "expression": "DIVIDE ( [窗口内复购客户数], [随访完整客户数] )",
+            "formatString": "0.00%",
+            "lineageTag": "288e661a-c265-4851-92a2-8a6969a8d334"
+          },
+          {
+            "name": "交承运商有效订单数",
+            "displayFolder": "履约",
+            "expression": "COUNT ( orders[handoff_days] )",
+            "formatString": "#,0",
+            "lineageTag": "0afc7aae-6bad-4386-978e-b6cbcb744b5b"
+          },
+          {
+            "name": "交承运商 P50（天）",
+            "displayFolder": "履约",
+            "expression": "IF ( [交承运商有效订单数] > 0, MEDIANX ( FILTER ( orders, NOT ISBLANK ( orders[handoff_days] ) ), orders[handoff_days] ) )",
+            "formatString": "#,0.00",
+            "lineageTag": "0e3c7f43-ca33-43a5-b677-38ec5606e13a"
+          },
+          {
+            "name": "交承运商 P90（天）",
+            "displayFolder": "履约",
+            "expression": "IF ( [交承运商有效订单数] > 0, PERCENTILEX.INC ( FILTER ( orders, NOT ISBLANK ( orders[handoff_days] ) ), orders[handoff_days], 0.9 ) )",
+            "formatString": "#,0.00",
+            "lineageTag": "b4f18422-7aea-44d4-a75f-846cfcfe8aef"
+          },
+          {
+            "name": "运输有效订单数",
+            "displayFolder": "履约",
+            "expression": "COUNT ( orders[transit_days] )",
+            "formatString": "#,0",
+            "lineageTag": "cc237413-3c11-4a00-a9e2-65bcbddda3c9"
+          },
+          {
+            "name": "运输 P50（天）",
+            "displayFolder": "履约",
+            "expression": "IF ( [运输有效订单数] > 0, MEDIANX ( FILTER ( orders, NOT ISBLANK ( orders[transit_days] ) ), orders[transit_days] ) )",
+            "formatString": "#,0.00",
+            "lineageTag": "5d580b2f-66bc-4af0-ac0a-dd8f606df00f"
+          },
+          {
+            "name": "运输 P90（天）",
+            "displayFolder": "履约",
+            "expression": "IF ( [运输有效订单数] > 0, PERCENTILEX.INC ( FILTER ( orders, NOT ISBLANK ( orders[transit_days] ) ), orders[transit_days], 0.9 ) )",
+            "formatString": "#,0.00",
+            "lineageTag": "bc0b33d3-4d99-4b4b-8607-06b329032aac"
+          },
+          {
+            "name": "低评 Wilson 上限",
+            "displayFolder": "评价",
+            "expression": [
+              "VAR N = [有有效评分订单数]",
+              "VAR P = [低评分率]",
+              "VAR Z = 1.96",
+              "VAR Z2 = Z * Z",
+              "RETURN",
+              "    IF (",
+              "        N > 0,",
+              "        DIVIDE ( P + Z2 / ( 2 * N ) + Z * SQRT ( P * ( 1 - P ) / N + Z2 / ( 4 * N * N ) ), 1 + Z2 / N )",
+              "    )"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "bda552d8-a036-4f37-9048-7783464bb091"
+          },
+          {
+            "name": "卖家单卖家订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( SellerSnapshot[single_seller_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "c9752b9b-a142-4cb4-848e-70128e07083a"
+          },
+          {
+            "name": "卖家有效延迟订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( SellerSnapshot[valid_delay_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "0f5d1034-ef3f-4a78-aadc-3c64628f9931"
+          },
+          {
+            "name": "卖家延迟订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( SellerSnapshot[late_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "455c5cc8-7b0b-4e0b-bf66-8b77f814cbb6"
+          },
+          {
+            "name": "卖家有评分订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( SellerSnapshot[rated_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "c4bc8367-06ce-4115-b899-5a4a8467f4d8"
+          },
+          {
+            "name": "卖家低评分订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( SellerSnapshot[low_score_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "1dda24af-5d11-4218-9b3e-7edb736147a4"
+          },
+          {
+            "name": "PCA 横坐标",
+            "displayFolder": "快照",
+            "expression": "AVERAGE ( SellerSnapshot[pc1] )",
+            "formatString": "#,0.00",
+            "lineageTag": "53c218bb-7563-4e95-9b7c-aea290a24500"
+          },
+          {
+            "name": "PCA 纵坐标",
+            "displayFolder": "快照",
+            "expression": "AVERAGE ( SellerSnapshot[pc2] )",
+            "formatString": "#,0.00",
+            "lineageTag": "06b12931-abe1-4dd7-84ab-c3fb2f7b75fe"
+          },
+          {
+            "name": "窗口内首次购买订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( MonthlyPurchase[first_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "7b68ba07-fd6e-4788-b49f-c78ce1f7ca6a"
+          },
+          {
+            "name": "窗口内后续购买订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( MonthlyPurchase[repeat_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "f567c725-4c04-4d6f-86bb-a293284f58d3"
+          },
+          {
+            "name": "客户月已交付订单数",
+            "displayFolder": "快照",
+            "expression": "SUM ( MonthlyPurchase[delivered_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "9016932d-adcc-4f3e-a05e-97727a5e5fab"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "指标",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(DataRoot & \"\\指标.parquet\"))",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

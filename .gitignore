@@ -1,0 +1,25 @@
+# Environments, machine settings and generated validation caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+archive/
+data/raw/
+powerbi/_tools/deps/
+powerbi/_tools/reference/
+powerbi/**/.pbi/
+*.pbix
+*.zip
+releases/
+# The full handoff deliberately contains processed snapshots and their license.
+# Exclude data/processed/ and powerbi/Olist/data/ here if storing data in Releases.

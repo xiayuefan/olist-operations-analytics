@@ -1,0 +1,16 @@
+{
+  "order_rows": 99441,
+  "review_rule_hits": 219,
+  "review_orders": 218,
+  "delivered_orders": 96478,
+  "valid_transit_orders": 96281,
+  "transit_mean_days": 9.334838062618255,
+  "transit_p50_days": 7.100752314814815,
+  "transit_p90_days": 18.907534722222223,
+  "transit_p95_days": 24.21837962962963,
+  "transit_p99_days": 40.98949074074073,
+  "transit_max_days": 205.19097222222223,
+  "valid_delay_orders": 96470,
+  "late_orders": 6534,
+  "late_rate": 0.06773090079817559
+}

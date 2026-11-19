@@ -1,0 +1,10 @@
+﻿table,file,rows,columns,grain,duplicate_rows_after_first,candidate_key,duplicate_keys_after_first,null_key_rows
+orders,olist_orders_dataset.csv,99441,8,一个订单,0,order_id,0.0,0.0
+items,olist_order_items_dataset.csv,112650,7,一条订单商品明细,0,order_id+order_item_id,0.0,0.0
+payments,olist_order_payments_dataset.csv,103886,5,一条支付记录,0,order_id+payment_sequential,0.0,0.0
+reviews,olist_order_reviews_dataset.csv,99224,7,一条评价记录，需另核对候选键,0,未指定,,
+customers,olist_customers_dataset.csv,99441,5,一个 customer_id 对应的客户资料,0,customer_id,0.0,0.0
+products,olist_products_dataset.csv,32951,9,一个商品,0,product_id,0.0,0.0
+sellers,olist_sellers_dataset.csv,3095,4,一个卖家,0,seller_id,0.0,0.0
+geolocation,olist_geolocation_dataset.csv,1000163,5,一条邮编前缀地理记录，前缀非唯一,261831,未指定,,
+category_translation,product_category_name_translation.csv,71,2,一个品类翻译映射,0,product_category_name,0.0,0.0

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "75eba4b1297fc36002f4",
+  "displayName": "03 品类与地域",
+  "displayOption": "FitToPage",
+  "width": 1440,
+  "height": 920,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F3F6F8'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "94ad507e5f1c44d9b347",
+      "target": "bb0807709ab66856d5ad",
+      "type": "NoFilter"
+    },
+    {
+      "source": "94ad507e5f1c44d9b347",
+      "target": "173beeba4a69c1df365a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b1bc9fa2cdf685d04bef",
+      "target": "bb0807709ab66856d5ad",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b1bc9fa2cdf685d04bef",
+      "target": "173beeba4a69c1df365a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "226bb068d6f5e254f5db",
+      "target": "bb0807709ab66856d5ad",
+      "type": "NoFilter"
+    },
+    {
+      "source": "226bb068d6f5e254f5db",
+      "target": "173beeba4a69c1df365a",
+      "type": "NoFilter"
+    }
+  ]
+}
