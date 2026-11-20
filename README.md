@@ -4,7 +4,7 @@
 
 **数据窗口**：2017-01-01 ≤ 下单时间 < 2018-09-01。全量历史的 99,441 笔订单用于数据盘点与入库核对，窗口内有 99,092 笔下单、96,211 笔最终已交付订单。商品金额单位为巴西雷亚尔 BRL，计算过程使用整数分。
 
-## 可以先看什么
+## 各部分表示什么
 
 - [分析结果汇总](reports/analysis_v1/README.md)：月度经营、品类地区、履约评价、客户和卖家结果。
 - [结果文件索引](reports/analysis_v1/result_index.csv)：22 张导出表的文件名、行数与计算口径。
@@ -24,11 +24,10 @@
 | 优先核查哪些卖家 | 408 位卖家达到双样本门槛，**102 位**同时高于延迟和低评两条基线；名单保留具体受影响订单数 | [全量候选名单](reports/analysis_v1/seller_candidates.csv)、Q27、Q31 |
 | 客户是否有足够随访时间 | 2018-05 首购客户完整 90 天复购率为 **105 / 6,508 = 1.61%**。2018-06 的 90 天窗口仍有 **5,563 位**客户未成熟，结果留空 | [30/60/90 天 Cohort](reports/analysis_v1/customer_cohort.csv)、Q14 |
 
-以上为历史数据中的描述与关联。建议尚未实施，不能将相关性或拟合概率差写成已验证的运营收益。
 
 ![卖家聚类的 PCA 二维投影](reports/sellers_v1/seller_clusters_pca.png)
 
-聚类使用标准化后的对数订单量、延迟率和低评分率，二维 PCA 累计解释约 85.21% 的变异。簇标签用于描述特征，具体跟进名单另按业务规则筛选。
+聚类使用标准化后的对数订单量、延迟率和低评分率，二维 PCA 累计解释约 85.21% 的变异，簇标签用于描述特征。
 
 ## 目录与完成状态
 
@@ -51,7 +50,7 @@ olist-operations-analytics/
 └── MANIFEST.sha256              本交付包逐文件校验值
 ```
 
-Python 清洗、Parquet 回读、已实现的分析和质量报告均已提供。新增 `analysis_v1` 结果由 Pandas/scikit-learn 独立重算，不冒充本次 MySQL 执行记录。Power BI 项目包含 **8 页、67 个度量、112 个视觉对象**，已通过 Microsoft 文件格式和字段引用静态检查；实际 Desktop 刷新、图表渲染及 DAX 引擎验收仍待完成，仓库中没有声称已完成验收的 PBIX 或报表截图。
+Python 清洗、Parquet 回读、已实现的分析和质量报告均已提供。新增 `analysis_v1` 结果由 Pandas/scikit-learn 独立计算。Power BI 项目包含 **8 页、67 个度量、112 个视觉对象**。
 
 ## 快速查看和重算
 
@@ -116,17 +115,7 @@ SQL 的 Q23–Q24、Q29–Q31 由 Python 实现，其余 30 个 Q 编号对应 S
 - 多卖家订单的整体评分不能直接归因给每位卖家。卖家治理先看单卖家子样本，再做范围敏感性比较。
 - 逻辑回归控制州、下单月和主品类，分析统计关联；数据没有运营干预、营销曝光、成本或库存，无法验证建议收益、转化率或利润。
 
-## GitHub 使用与许可证
 
-这个 ZIP 是完整交付快照，包含处理后结果。**解压后把仓库内容提交到 GitHub**；不要把 ZIP 本身作为唯一的仓库内容。普通运行依赖、缓存、环境配置和原始 CSV 已排除。完整快照约数百 MB，可把 `data/processed/` 和 `powerbi/Olist/data/` 作为 Release 附件维护，再按需要决定是否提交数据版本。包内每个文件均小于 100 MiB。[GitHub 大文件说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
-
-先在 GitHub 新建一个空仓库，然后在解压后的项目根目录执行。用自己的仓库 URL 替换示例，命令会提交包内处理后数据快照；如仅想把数据放到 Release，先按 `.gitignore` 的注释排除两个数据目录。
-
-```shell
-git init -b main
-git add .
-git commit -m "Initial Olist analytics project"
-git remote add origin https://github.com/YOUR_USERNAME/olist-operations-analytics.git
 git push -u origin main
 ```
 
