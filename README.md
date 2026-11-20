@@ -1,122 +1,121 @@
-# Olist 电商经营与履约分析
+# Olist E-Commerce Operations & Delivery Optimization Analysis
 
-从九张电商关系表出发，使用 **Python → Parquet → MySQL → Power BI**，分析经营增长、履约与评价、卖家优先级和客户复购。项目包含清洗代码、测试、30 个专题 SQL 查询、回归与聚类分析、课程文档，以及可复查的结果快照。
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Pandas](https://img.shields.io/badge/Pandas-2.0.3-150458)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1)
+![Power BI](https://img.shields.io/badge/PowerBI-Desktop-F2C811)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-**数据窗口**：2017-01-01 ≤ 下单时间 < 2018-09-01。全量历史的 99,441 笔订单用于数据盘点与入库核对，窗口内有 99,092 笔下单、96,211 笔最终已交付订单。商品金额单位为巴西雷亚尔 BRL，计算过程使用整数分。
+这是一个基于真实的巴西电商数据集（Olist）构建的**端到端数据分析项目**。技术主线为 **Python → Parquet → MySQL → Power BI**。
 
-## 各部分表示什么
+项目致力于回答四个核心业务问题：
+* 经营变化的核心驱动因素是什么？
+* 哪些履约/物流问题与差评高度相关？
+* 应当优先干预和跟进哪些卖家？
+* 不同客户在相同的观察窗口内的复购表现如何？
 
-- [分析结果汇总](reports/analysis_v1/README.md)：月度经营、品类地区、履约评价、客户和卖家结果。
-- [结果文件索引](reports/analysis_v1/result_index.csv)：22 张导出表的文件名、行数与计算口径。
-- [数据清洗和质量报告](reports/)：各阶段缺失、主键、金额、时间和关联检查。
-- [Power BI 八页项目](powerbi/Olist/Olist.pbip)：报表与本地语义模型一起提供；请在 Desktop 中打开。
-- [指标字典与业务建议](docs/47_项目交付核对与答辩.md)：指标分母、可复查的发现及建议验证方案。
-- [完整学习路线](docs/00_项目路线.md)：包括 23 份 Notebook 和后续课程。
+---
 
-## 关键发现
+## 🛠️ 技术栈
 
-| 问题 | 结果 | 证据 |
-| --- | --- | --- |
-| 经营增长从哪里来 | 2017 年 11 月商品成交额比 10 月增加 **339,517.72 BRL**。订单量贡献 **+406,928.13**，客单价贡献 **−67,410.41 BRL** | [月度拆解](reports/analysis_v1/monthly_business.csv)、Q06 |
-| 哪些品类和地区贡献增量 | 11 月增量最高品类 `bed_bath_table` 增加 **41,949.93 BRL**；客户州 SP 增加 **130,986.10 BRL** | [品类增量](reports/analysis_v1/category_november_growth.csv)、[州增量](reports/analysis_v1/state_november_growth.csv) |
-| 履约与评价如何关联 | **6,531 / 96,203 = 6.79%** 的可判断订单延迟。按时或提前组低评率 **9.25%**，延迟 8–14 天组 **80.15%** | [延迟分档](reports/analysis_v1/delay_bands_and_reviews.csv)、Q17–Q19 |
-| 州构成能解释多少低评差异 | 延迟组与按时或提前组的低评率差，直接汇总为 **53.17 个百分点**，共用州权重后为 **50.46 个百分点** | [标准化结果](reports/analysis_v1/state_standardization.csv)、Q22 |
-| 优先核查哪些卖家 | 408 位卖家达到双样本门槛，**102 位**同时高于延迟和低评两条基线；名单保留具体受影响订单数 | [全量候选名单](reports/analysis_v1/seller_candidates.csv)、Q27、Q31 |
-| 客户是否有足够随访时间 | 2018-05 首购客户完整 90 天复购率为 **105 / 6,508 = 1.61%**。2018-06 的 90 天窗口仍有 **5,563 位**客户未成熟，结果留空 | [30/60/90 天 Cohort](reports/analysis_v1/customer_cohort.csv)、Q14 |
+* **数据清洗与处理**：Python (Pandas, PyArrow, NumPy)
+* **数据存储与分析**：MySQL, Parquet
+* **数据可视化**：Power BI
+* **文档与 Notebook**：Jupyter Notebook, Markdown
 
+---
 
-![卖家聚类的 PCA 二维投影](reports/sellers_v1/seller_clusters_pca.png)
-
-聚类使用标准化后的对数订单量、延迟率和低评分率，二维 PCA 累计解释约 85.21% 的变异，簇标签用于描述特征。
-
-## 目录与完成状态
+## 📂 项目结构
 
 ```text
 olist-operations-analytics/
-├── src/                         清洗、导出、回归、聚类和分析结果代码
-├── sql/                         建表、入库验收与 30 个专题 SQL 查询
-├── notebooks/                   23 份逐步清洗与检查 Notebook
-├── config/                      字段、主键、类型及关联约定
-├── tests/                       清洗逻辑测试
-├── docs/                        课程、指标字典与交付记录
-├── reports/                     已有质量报告、图表及业务汇总结果
-├── data/processed/              所有已生成的清洗表与 Parquet 快照
-├── powerbi/Olist/               八页 PBIP、语义模型和随附数据
-├── powerbi/_tools/              报表构建与静态校验脚本
-├── powerbi/set_data_path.py     换目录后更新 Power BI 数据参数
-├── requirements*.txt           运行、Notebook 与开发依赖
-├── LICENSE                     原创代码许可
-├── DATA_LICENSE.md             数据和派生结果的来源与许可
-└── MANIFEST.sha256              本交付包逐文件校验值
+├── archive/            # 原始 CSV 数据文件 (需自行从 Kaggle 下载)
+├── docs/               # 项目路线图、指标口径与业务指导文档
+├── notebooks/          # Jupyter 探索性分析笔记
+├── src/                # 可重复执行的数据清洗与处理脚本
+├── sql/                # 数据建表、加载核对与业务分析 SQL
+├── reports/            # 数据盘点、清洗质量报告与业务分析报告
+├── powerbi/            # Power BI 仪表板文件 (.pbix)
+└── requirements.txt    # 核心依赖及版本说明
 ```
 
-Python 清洗、Parquet 回读、已实现的分析和质量报告均已提供。新增 `analysis_v1` 结果由 Pandas/scikit-learn 独立计算。Power BI 项目包含 **8 页、67 个度量、112 个视觉对象**。
+---
 
-## 快速查看和重算
+## 🚀 快速开始
 
-已包含处理后数据，先看结果无需下载原始 CSV，也无需数据库密码。参考环境为 CPython 3.8.20、Pandas 2.0.3、PyArrow 17.0.0、scikit-learn 1.3.2；MySQL 查询使用 8.0 窗口函数。Python 3.8 已结束官方支持，这里保留历史复现版本，迁移到较新 Python 时应重新运行测试与核对。
+### 1. 环境准备
 
-```powershell
+本项目推荐使用 Python 3.8.20 及以上版本。
+
+```bash
+# 创建并激活虚拟环境
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe .\src\16_export_analysis_results.py
+.\.venv\Scripts\activate   # Windows
+# source .venv/bin/activate  # macOS/Linux
+
+# 安装依赖（请根据实际执行的阶段选择对应的依赖文件）
+pip install -r requirements.txt
+# 如需运行 Notebook 或 MySQL 导入，请安装：
+# pip install -r requirements-notebooks.txt
+# pip install -r requirements-mysql.txt
 ```
 
-最后一条命令重算 22 张业务结果表和运行说明。若要使用 Notebook，另装 `requirements-notebooks.txt`；如果仅阅读结果，直接打开 `reports/` 中的 CSV 和 Markdown。
+### 2. 数据准备
 
-### 打开 Power BI
+请前往 [Kaggle Olist 数据集](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) 下载原始数据（共 9 张表），并将其解压至项目的 `archive/` 目录下。**请确保原始数据与代码仓库分开管理。**
 
-在 Power BI Desktop 中关闭本项目后执行以下命令，给本地模型设置解压后的数据路径。再双击 `powerbi/Olist/Olist.pbip`，需要时在 Desktop 里启用 Power BI Project/PBIR 功能，刷新后按[第 61 课](docs/46_PowerBI剩余课程与项目交付.md#lesson61)验收。若想保存单文件，在 Desktop 里另存为 `.pbix`。保留整个 `powerbi/Olist/` 目录，单独复制 `.pbip` 会缺少报表和模型文件。
+### 3. 数据处理流水线
 
-```powershell
-.\.venv\Scripts\python.exe .\powerbi\set_data_path.py
+本项目的清洗流程分为多个阶段，每个阶段都会生成独立的数据集与质量核对报告（位于 `data/processed/` 与 `reports/`）：
+
+```bash
+# 阶段 1: 生成原始数据盘点报告
+python src/01_profile_raw.py
+
+# 阶段 2: 各业务模块清洗 (以订单为例)
+# 默认运行六规则 v1，可加 --rules-version v2 生成八规则 v2
+python src/02_clean_orders.py 
+
+# 阶段 3: 导出为 Parquet 格式 (供 MySQL 导入和 Power BI 使用)
+python src/10_export_parquet.py
 ```
 
-页签依次为经营总览、增长拆解、品类与地域、履约时效、评价体验、卖家分层与治理、客户分群、复购与 Cohort。经营页按日期筛选；卖家、RFM 和 Cohort 是固定观察窗口快照，筛选只改变展示样本。
+*注：脚本 `02` 至 `09` 分别对应订单、明细、支付、评价、客户、商品、卖家、地理等 9 张表的清洗与关联。清洗过程中保留完整明细与核对逻辑，不擅自修正跨表差异，具体逻辑及字段字典请参考 `docs/` 目录。*
 
-### 从原始数据完整复现
+### 4. 数据库与 BI 分析
 
-从 [Olist 的 Kaggle 数据页](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) 下载九张 CSV，放在仓库同级的 `archive/`，或给清洗脚本传 `--data-dir`。原始数据没有打进仓库。历史课程中的 `D:/数据分析/...` 是原课堂路径，运行时换成自己的项目目录。
+* 将 `data/processed/mysql_input_v1/` 中的 Parquet 数据导入 MySQL。
+* 执行 `sql/` 目录下的查询脚本（包含 30+ 业务专题 SQL、窗口函数与 CTE 分析）。
+* 通过 `python src/15_export_powerbi.py` 生成 BI 层分析数据。
+* 在 Power BI Desktop 中完成可视化报表后，保存至 `powerbi/` 目录。
 
-```powershell
-.\.venv\Scripts\python.exe .\src\01_profile_raw.py
-.\.venv\Scripts\python.exe .\src\02_clean_orders.py
-.\.venv\Scripts\python.exe .\src\02_clean_orders.py --rules-version v2
-.\.venv\Scripts\python.exe .\src\03_clean_items.py
-.\.venv\Scripts\python.exe .\src\04_clean_payments.py
-.\.venv\Scripts\python.exe .\src\05_clean_reviews.py
-.\.venv\Scripts\python.exe .\src\06_clean_customers.py
-.\.venv\Scripts\python.exe .\src\07_clean_products.py
-.\.venv\Scripts\python.exe .\src\08_clean_sellers.py
-.\.venv\Scripts\python.exe .\src\09_clean_geolocation.py
-.\.venv\Scripts\python.exe .\src\10_export_parquet.py
-```
+---
 
-MySQL 步骤分终端执行。先在已登录的 `mysql>` 运行 `source sql/01_create_schema.sql` 和 `source sql/02_check_schema.sql`。再回到项目 PowerShell 运行下列装载命令，密码在终端交互输入。目标表必须为空，装载失败会回滚。然后在 `mysql>` 运行 `source sql/03_check_loaded_data.sql` 和各业务查询，SQL 客户端如不支持 `source`，直接打开对应文件执行。
+## 💡 业务分析路线图
 
-```powershell
-.\.venv\Scripts\python.exe .\src\12_load_mysql.py
-.\.venv\Scripts\python.exe .\src\13_delay_review_logistic.py --include-category
-.\.venv\Scripts\python.exe .\src\14_seller_clustering.py --pca --compare-rules
-.\.venv\Scripts\python.exe .\src\15_export_powerbi.py
-.\.venv\Scripts\python.exe .\src\16_export_analysis_results.py
-.\.venv\Scripts\python.exe .\powerbi\_tools\build_report.py
-```
+项目从问题定义到最终报表，遵循以下结构化路径：
 
-SQL 的 Q23–Q24、Q29–Q31 由 Python 实现，其余 30 个 Q 编号对应 SQL。`11_generate_mysql_schema.py` 可重新按清单生成建表文件；已附的建表文件可以直接使用。
+1. **原始数据认知**：识别九张表的主键/外键、空值分布与业务含义。
+2. **数据清洗与标准化**：处理缺失值、类型转换、州代码映射与多表关联。
+3. **核心指标构建**：定义 GMV、客单价、妥投时间、差评率等业务指标口径。
+4. **MySQL 深度分析**：运用窗口函数、CTE 与多表 Join 计算复购率、卖家画像等。
+5. **Power BI 可视化**：搭建成交额瀑布图、交付延迟异常象限图等交互式报表。
+6. **业务洞察与总结**：输出针对性的运营优化建议（如优先跟进卖家清单）。
 
-## 口径与质量控制
+---
 
-- 商品明细、支付、评价保留各自粒度，分别处理后再关联订单，防止多对多连接放大金额。
-- `customer_id` 关联订单，`customer_unique_id` 识别窗口内同一客户的多次购买。
-- 金额用整数分核对。相同来源的导出/关联控制总额必须一致；跨来源存在支付差额则保留证据清单。
-- 未知重量的零重量标记保留空值；无评分不计入低评率分母；未成熟 Cohort 不补成 0%。
-- 多卖家订单的整体评分不能直接归因给每位卖家。卖家治理先看单卖家子样本，再做范围敏感性比较。
-- 逻辑回归控制州、下单月和主品类，分析统计关联；数据没有运营干预、营销曝光、成本或库存，无法验证建议收益、转化率或利润。
+## 📊 分析产出
 
+本项目按阶段交付以下成果，以保证结论的**可复现性**与**可追溯性**：
 
-git push -u origin main
-```
+1. **清洗代码与质量报告**：记录数据输入输出、控制总额与关联核对逻辑。
+2. **业务分析报告**：位于 `reports/`，包含数据盘点、交叉验证与专题分析结论。
+3. **可视化仪表板**：涵盖经营增长（瀑布图）、履约优化、卖家管理、客户复购等 8 页 Power BI 报表。
+4. **教学与复盘文档**：位于 `docs/`，包含 50+ 课时的完整分析路线、思路与操作记录，方便读者复现项目。
 
-原创代码按 [MIT](LICENSE) 提供。Olist 数据及其派生数据、结果另按 [DATA_LICENSE.md](DATA_LICENSE.md) 中记录的 **CC BY-NC-SA 4.0** 来源要求使用，MIT 不授予原数据的商业使用权限。感谢 Olist 提供公开数据。项目是基于公开数据的个人研究与学习作品，不代表曾为 Olist 提供真实业务服务。
+---
+
+## 📄 开源协议 & 数据声明
+
+* **代码协议**：本项目代码基于 [MIT License](LICENSE) 开源。
+* **数据版权**：本项目使用的数据来自公开的 Olist 电商数据集，版权及使用规范请严格遵循 [Kaggle 官方说明](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)。在公开作品集展示时，请务必将原始数据、代码与可视化图表分开管理。
