@@ -1,4 +1,4 @@
-# Olist E-Commerce Operations & Delivery Optimization Analysis
+# Olist 电商经营与履约优化分析
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-2.0.3-150458)
